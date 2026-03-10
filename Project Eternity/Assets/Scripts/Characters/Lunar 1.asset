@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e787bb2f794a6a4695134e4583867ae, type: 3}
+  m_Name: Lunar 1
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  name: Lunar
+  characterSprite: {fileID: -3472441004445017838, guid: 39df9530305d39649b45814edcb19af6, type: 3}
+  lines:
+  - So that's what I have so far!
+  - It honestly isn't much, but, its a start.
+  - See yall next time folks!!!!! >3

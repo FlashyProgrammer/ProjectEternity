@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e787bb2f794a6a4695134e4583867ae, type: 3}
+  m_Name: Ugly Bastard Dialogue
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  name: Ugly Bastard
+  characterSprite: {fileID: -3508182883100472787, guid: b9fbae43fecae6d47abc85873eaa523c, type: 3}
+  lines:
+  - Hello there! I seem to have gotten lost.
+  - Do you mind helping me find a way home.
