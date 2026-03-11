@@ -26,17 +26,26 @@ public class PlayerEffects : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        // Jump Pad Collisions
         if (collision.CompareTag("Jump Pad"))
         {
             Vector2 amount = new Vector2(0f, airForce);
             rb.AddForce(amount, ForceMode2D.Force);
             rb.gravityScale = 1f;
         }
-
+        // Soul Collisions
         if (collision.CompareTag("Soul") && isDropped)
         {
             characterSoul = collision.transform;
             isDropped = false;
+        }
+    }
+
+    public void DropSoul()
+    {
+        if (characterSoul != null)
+        {
+            isDropped = true;
         }
     }
 }

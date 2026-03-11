@@ -83,13 +83,13 @@ public class PlayerController : MonoBehaviour
     {
         dashTimer -= Time.fixedDeltaTime;
 
-        if (Input.GetButtonDown("Fire1") && isGrounded && dashTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.Mouse2) && isGrounded && dashTimer <= 0)
         {
             dashTimer = dashCooltime;
             applyDash = true;
         }
 
-        if (Input.GetButtonDown("Fire1") && canAirDash && dashTimer <=0)
+        if (Input.GetKeyDown(KeyCode.Mouse2) && canAirDash && dashTimer <=0)
         {
             dashTimer = dashCooltime;
             applyDash = true;
@@ -190,10 +190,12 @@ public class PlayerController : MonoBehaviour
 
         if (applyDash)
         {
-            var dash = (facingRight) ? Vector2.right * dashSpeed : -Vector2.right * dashSpeed;
+            var dash = (facingRight) ? Vector2.right * dashSpeed : -Vector2.right * dashSpeed;                                                              
             rb.AddForce(dash, ForceMode2D.Impulse);
             applyDash = false;
         }
+
+
         if (applyAirJump)
         {
             jumpCounter++;
