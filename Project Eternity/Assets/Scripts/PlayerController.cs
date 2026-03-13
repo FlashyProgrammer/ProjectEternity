@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
         PlayerJump();
         PlayerDash();
         flipSprite();
-        
     }
 
     private void FixedUpdate()
@@ -136,7 +135,7 @@ public class PlayerController : MonoBehaviour
         {
             if (rb.linearVelocityY < 0f)
             {
-                rb.gravityScale = originalGravity;
+                rb.gravityScale = maxFallSpeed;
                 
             }
         }

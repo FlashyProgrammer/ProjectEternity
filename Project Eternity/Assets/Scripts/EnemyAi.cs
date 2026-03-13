@@ -11,14 +11,18 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private GameObject spawnObject;
 
     private float spawnTimer;
+    private bool hasSpawned = false;
     private bool isInSight;
+
     private void FixedUpdate()
     {
         isInSight = Physics2D.OverlapCircle(transform.position, circleDetectionRadius, playerLayer);
 
-        if (isInSight)
+        spawnTimer -= Time.fixedDeltaTime;
+
+        if (isInSight && spawnTimer > 0f)
         {
-            spawnTimer -= Time.fixedDeltaTime;
+            Debug.Log(spawnTimer);
             SpawnObject();
         }
     }
@@ -26,15 +30,17 @@ public class EnemyAi : MonoBehaviour
     private void SpawnObject()
     {
         spawnTimer = spawnRate;
-        if (spawnTimer > 0f)
-        {
-            Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
 
-            if (isTypeOne)
-            {
-                Destroy(this.gameObject, 2f);
-            }
+        Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+        
+        spawnTimer = 0f;
+
+        if (isTypeOne)
+        {
+            hasSpawned = true;
+            Destroy(this.gameObject, 5f);
         }
+        
     }
 
     private void OnDrawGizmos()

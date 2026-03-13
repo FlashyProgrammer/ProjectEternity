@@ -4000,7 +4000,7 @@ Transform:
   m_GameObject: {fileID: 225069909}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.432964, y: 10.612225, z: -10}
+  m_LocalPosition: {x: 30.452965, y: 161.52222, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17238,37 +17238,6 @@ SpriteShapeRenderer:
     m_Center: {x: 0.041460276, y: 0.5649129, z: 0}
     m_Extent: {x: 2.7890959, y: 0.684989, z: 0}
   m_SpriteSortPoint: 0
---- !u!1 &1328445600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1328445601}
-  m_Layer: 8
-  m_Name: Soul reset area
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1328445601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328445600}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.631, y: 0.068, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698876939}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341552240
 GameObject:
   m_ObjectHideFlags: 0
@@ -20246,11 +20215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8089baf830aa35843aec29d99df997ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAi
-  isTypeOne: 1
+  isTypeOne: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  circleDetectionRadius: 1.2
+  circleDetectionRadius: 2
   spawnArea: {fileID: 1511520625}
   spawnRate: 10
   spawnObject: {fileID: 1568352548399847668, guid: 0664b56d45834f04d8d1546b9f6d4d79, type: 3}
@@ -23616,7 +23585,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1328445601}
   - {fileID: 654983292}
   - {fileID: 1918513479}
   m_Father: {fileID: 0}

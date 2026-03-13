@@ -31,7 +31,7 @@ public class PlayerEffects : MonoBehaviour
     {
         if (!isDropped && characterSoul != null)
         {
-            Debug.Log("Is following character");
+            
             characterSoul.transform.position = Vector2.Lerp(characterSoul.gameObject.transform.position, 
                 soulArea.position, followSpeed * Time.fixedDeltaTime);
         }
