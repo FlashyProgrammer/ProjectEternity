@@ -20215,13 +20215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8089baf830aa35843aec29d99df997ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAi
-  isTypeOne: 0
+  isTypeOne: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   circleDetectionRadius: 2
   spawnArea: {fileID: 1511520625}
-  spawnRate: 10
+  spawnRate: 5
+  despawnTime: 2
   spawnObject: {fileID: 1568352548399847668, guid: 0664b56d45834f04d8d1546b9f6d4d79, type: 3}
 --- !u!4 &1511520625
 Transform:
