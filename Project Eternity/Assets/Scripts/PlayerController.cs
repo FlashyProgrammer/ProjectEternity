@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Skills")]
     [SerializeField] private bool canAirDash;
-    [SerializeField] private int jumpMax;
+    [SerializeField] private int jumpAddition;
 
     private Vector3 originalScale;
     private bool canAirJump;
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if(Input.GetButtonDown("Jump") && jumpCounter != jumpMax)
+        if(Input.GetButtonDown("Jump") && jumpCounter != jumpAddition)
         {
             applyAirJump = true;
             rb.gravityScale = originalGravity;
