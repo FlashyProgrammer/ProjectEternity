@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -22,11 +23,13 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float objectDespawnTime;
     [SerializeField] private GameObject spawnObject;
     [SerializeField] private float projectileForce;
+    [SerializeField] private float forceAngle;
+
 
     private bool hasSpawned = false;
     private bool isInSight;
-    private bool isInSightRight;
-    private bool isInSightLeft;
+    private bool isLinetRight;
+    private bool isLineLeft;
 
     private void FixedUpdate()
     {
@@ -37,11 +40,21 @@ public class EnemyAi : MonoBehaviour
 
         if (isLineDetection)
         {
-            isInSightRight = Physics2D.Raycast(transform.position, transform.right, lineDistance, playerLayer);
-            isInSightLeft = Physics2D.Raycast(transform.position, -transform.right, lineDistance, playerLayer);
+            isLinetRight = Physics2D.Raycast(transform.position, transform.right, lineDistance, playerLayer);
+            isLineLeft = Physics2D.Raycast(transform.position, -transform.right, lineDistance, playerLayer);
         }
 
         if (isInSight && !hasSpawned)
+        {
+            StartCoroutine(SpawnTimer());
+        }
+
+        if (isLinetRight && !hasSpawned)
+        {
+            StartCoroutine(SpawnTimer());
+        }
+
+        if (isLineLeft && !hasSpawned)
         {
             StartCoroutine(SpawnTimer());
         }
@@ -52,52 +65,46 @@ public class EnemyAi : MonoBehaviour
 
     private IEnumerator SpawnTimer()
     {
+
         hasSpawned = true;
+
+        yield return new WaitForSeconds(spawnRate);
 
         if (isStatic)
         {
             Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
-
             Destroy(this.gameObject, despawnTime);
         }
 
         if (isProjectile)
         {
-            var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+            if (isLinetRight)
+            {
+                float radianAngle = forceAngle * Mathf.Deg2Rad;
+                Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+                var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                var projectileRb = projectile.GetComponent<Rigidbody2D>();
+                projectileRb.linearVelocity = directionAngle * projectileForce;
 
-            var projectileRb = projectile.GetComponent<Rigidbody2D>();
+                Destroy(projectile, objectDespawnTime);
 
-            projectileRb.AddTorque(projectileForce, ForceMode2D.Impulse);
+            }
 
-            Destroy(projectile, objectDespawnTime);
+            if (isLineLeft)
+            {
+                float radianAngle = forceAngle * Mathf.Deg2Rad;
+                Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+                var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                var projectileRb = projectile.GetComponent<Rigidbody2D>();
+                projectileRb.linearVelocity = directionAngle * projectileForce;
+                projectileRb.linearVelocityX = -projectileRb.linearVelocityX; 
+
+                Destroy(projectile, objectDespawnTime);
+            }
+
         }
-
-        yield return new WaitForSeconds(spawnRate);
 
         hasSpawned = false;
-
-        if (isProjectile)
-        {
-            var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
-
-            var projectileRb = projectile.GetComponent<Rigidbody2D>();
-
-            if (isInSightRight)
-            {
-                projectileRb.AddTorque(-projectileForce, ForceMode2D.Impulse);
-                projectileRb.AddForce(- transform.up * projectileForce, ForceMode2D.Impulse);
-            }
-
-            if(isInSightLeft)
-            {
-                projectileRb.AddTorque(projectileForce, ForceMode2D.Impulse);
-                projectileRb.AddForce(transform.up * projectileForce, ForceMode2D.Impulse);
-            }
-
-            Destroy(projectile, objectDespawnTime);
-
-        }
-
     }
     private void OnDrawGizmos()
     {

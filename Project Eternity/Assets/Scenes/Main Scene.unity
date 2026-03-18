@@ -153,16 +153,17 @@ MonoBehaviour:
     m_Bits: 256
   spawnArea: {fileID: 286123}
   circleDetectionRadius: 0
-  lineDistance: 0
+  lineDistance: 10
   isLineDetection: 1
   isCircleDetection: 0
   isStatic: 0
   isProjectile: 1
-  spawnRate: 1.5
+  spawnRate: 0.5
   despawnTime: 0
   objectDespawnTime: 3
   spawnObject: {fileID: 6040958001185129959, guid: 4a6f85b0ebdab644f9b2b245a3503448, type: 3}
-  projectileForce: 10
+  projectileForce: 5
+  forceAngle: 80
 --- !u!4 &286123
 Transform:
   m_ObjectHideFlags: 0
@@ -19518,6 +19519,7 @@ MonoBehaviour:
   objectDespawnTime: 0
   spawnObject: {fileID: 1568352548399847668, guid: 0664b56d45834f04d8d1546b9f6d4d79, type: 3}
   projectileForce: 0
+  forceAngle: 0
 --- !u!4 &1511520625
 Transform:
   m_ObjectHideFlags: 0
