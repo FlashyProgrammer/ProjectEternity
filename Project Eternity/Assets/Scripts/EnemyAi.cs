@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class EnemyAi : MonoBehaviour
 {
@@ -22,6 +21,10 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float despawnTime;
     [SerializeField] private float objectDespawnTime;
     [SerializeField] private GameObject spawnObject;
+
+    [Header("Projectile Parameters")]
+    [SerializeField] private float minForceAngle;
+    [SerializeField] private float maxForceAngle;
     [SerializeField] private float projectileForce;
     [SerializeField] private float forceAngle;
 
@@ -65,10 +68,7 @@ public class EnemyAi : MonoBehaviour
 
     private IEnumerator SpawnTimer()
     {
-
         hasSpawned = true;
-
-        yield return new WaitForSeconds(spawnRate);
 
         if (isStatic)
         {
@@ -76,8 +76,14 @@ public class EnemyAi : MonoBehaviour
             Destroy(this.gameObject, despawnTime);
         }
 
+        yield return new WaitForSeconds(spawnRate);
+
         if (isProjectile)
         {
+            var randomForceAngle = UnityEngine.Random.Range(minForceAngle, maxForceAngle);
+
+            forceAngle = randomForceAngle;
+
             if (isLinetRight)
             {
                 float radianAngle = forceAngle * Mathf.Deg2Rad;

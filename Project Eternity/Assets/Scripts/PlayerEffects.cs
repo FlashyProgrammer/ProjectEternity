@@ -12,7 +12,7 @@ public class PlayerEffects : MonoBehaviour
     private float originalDamping;
     private float originalAngularDaming;
     private float originalMass;
-
+    private Transform currentCheckPoint;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,11 +31,31 @@ public class PlayerEffects : MonoBehaviour
     {
         if (!isDropped && characterSoul != null)
         {
-            
             characterSoul.transform.position = Vector2.Lerp(characterSoul.gameObject.transform.position, 
                 soulArea.position, followSpeed * Time.fixedDeltaTime);
         }
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check environment hazard (Spikes)
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            Debug.Log("Player hit hazard");
+            transform.position = currentCheckPoint.position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Checks for checkpoint collisions
+        if (collision.CompareTag("Checkpoint"))
+        {
+            currentCheckPoint = collision.transform;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         // Jump Pad Collisions
@@ -80,69 +100,4 @@ public class PlayerEffects : MonoBehaviour
             isDropped = true;
         }
     }
-
-    /*
-     * private void Start()
-     * {
-     *  // Activity 2
-     *  
-     * var string charName;
-     * 
-     * if (charName == "Mario")
-     * 
-     * {
-     *    Debug.Log("Hello Mario!");
-     * }
-     * 
-     * else
-     * {
-     *     Debug.Log("Hello Stranger!");
-     * }
-     * 
-     *  // Activity 2
-     * var int a = 8;
-     * var int b = 12;
-     * 
-     * if (a > b)
-     * {
-     *     Debug.Log(" A is larger than B!")
-     * }
-     * 
-     * else
-     * {
-     *     Debug.Log(" A is not larger than B!")
-     * }
-     * 
-     * }
-     * 
-     *   // Activity 4
-     *   
-     * [Range(1, 10)]
-     * private int playerScore;
-     * 
-     * if(playerScore <= 2) 
-     * 
-     * {
-     *    Debug.Log("YOU SUCK AT THIS GAME!");
-     * }
-     * else if (playerScore >= 3  && playerScore <= 4)
-     * 
-     * {
-     *     Debug.Log("YOU ARE OKAY AT THIS GAME ");
-     * }
-     * 
-     * else if (playerScore >= 5 && playerScore <= 6)
-     * 
-     * {
-     *     Debug.Log("YOU ARE GOOD AT THIS GAME ");
-     * }
-     * 
-     * else if (playerScore >= 7 && playerScore <= 10)
-     * 
-     * {
-     *     Debug.Log("YOU ARE GREAT AT THIS GAME ");
-     * }
-     * 
-     */
-
 }

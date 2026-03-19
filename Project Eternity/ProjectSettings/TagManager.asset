@@ -8,6 +8,8 @@ TagManager:
   - Soul
   - Slippery
   - Hazard
+  - Checkpoint
+  - Point
   layers:
   - Default
   - TransparentFX
