@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooltime;
 
     [Header("Player Skills")]
+    [SerializeField] private bool canFloat;
     [SerializeField] private bool canAirDash;
     [SerializeField] private int jumpAddition;
 
@@ -125,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
-            if (rb.linearVelocityY < 0f)
+            if (rb.linearVelocityY < 0f && canFloat)
             {
                 rb.gravityScale = floatingSpeed;
             }
@@ -133,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonUp("Jump"))
         {
-            if (rb.linearVelocityY < 0f)
+            if (rb.linearVelocityY < 0f && canFloat)
             {
                 rb.gravityScale = maxFallSpeed;
                 

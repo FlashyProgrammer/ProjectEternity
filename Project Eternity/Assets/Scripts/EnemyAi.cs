@@ -13,7 +13,8 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private bool isCircleDetection;
 
     [Header("Enemy Type")]
-    [SerializeField] private bool isStatic;
+    [SerializeField] private bool isPatrol; 
+    [SerializeField] private bool isOneTime;
     [SerializeField] private bool isProjectile;
 
     [Header("Enemy Parameters")]
@@ -28,12 +29,34 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float projectileForce;
     [SerializeField] private float forceAngle;
 
+    [Header("Patrol Parameters")]
+    [SerializeField] private Transform[] patrolPoints;
+    [SerializeField] private float patrolSpeed;
+    [SerializeField] private float chaseSpeed;
+    [SerializeField] private float waitTime;
 
+    private int index = 0;
+    private Vector3 currentPosition;
+    private Transform currentPoint;
     private bool hasSpawned = false;
+    private float waitCounter;
     private bool isInSight;
     private bool isLinetRight;
     private bool isLineLeft;
 
+
+    private void Awake()
+    {
+        if (isPatrol)
+        {
+            currentPosition = transform.position;
+            currentPoint = patrolPoints[index];
+        }
+    }
+    private void Update()
+    {
+        EnemyPatrol();
+    }
     private void FixedUpdate()
     {
         if (isCircleDetection)
@@ -70,7 +93,7 @@ public class EnemyAi : MonoBehaviour
     {
         hasSpawned = true;
 
-        if (isStatic)
+        if (isOneTime)
         {
             Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
             Destroy(this.gameObject, despawnTime);
@@ -112,6 +135,37 @@ public class EnemyAi : MonoBehaviour
 
         hasSpawned = false;
     }
+
+    private void EnemyPatrol()
+    {
+        if (isPatrol)
+        {
+            currentPoint = patrolPoints[index];
+
+            if (MathF.Abs(currentPosition.x - currentPoint.position.x) < 0.01f)
+            {
+                waitCounter -= Time.deltaTime;
+                
+                if (waitCounter < 0f)
+                {
+                    waitCounter = waitTime;
+                    index++;
+                }
+            }
+
+            else
+            {
+                currentPosition.x = Mathf.MoveTowards(transform.position.x, currentPoint.position.x, patrolSpeed * Time.deltaTime);
+                transform.position = currentPosition;
+            }
+
+            if (index == patrolPoints.Length)
+            {
+                index = 0;
+            }
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.purple;

@@ -11,17 +11,19 @@ public class DialogueTrigger : MonoBehaviour
         TriggerDialogue();
     }
 
+    public void EnableTrigger()
+    {
+        this.gameObject.GetComponent<DialogueTrigger>().enabled = true;
+    }
     public void TriggerDialogue()
     {
             Debug.Log("Dialogue triggered");
             FindAnyObjectByType<DialogueManager>().BeginDialogue(characterList[characterCount]);
-        
     }
 
     public void nextCharacter()
     {
         characterCount++;
-        Debug.Log(characterCount);
 
         if (characterCount < characterList.Length)
         {

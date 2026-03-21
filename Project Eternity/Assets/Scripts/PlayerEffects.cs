@@ -6,6 +6,9 @@ public class PlayerEffects : MonoBehaviour
     [SerializeField] private float airForce;
     [SerializeField] private float followSpeed;
     [SerializeField] private Transform soulArea;
+    [SerializeField] private float massChange;
+    [SerializeField] private float dampChange;
+    [SerializeField] private float angularDampChange;
     private Transform characterSoul;
     private bool isDropped;
 
@@ -74,9 +77,9 @@ public class PlayerEffects : MonoBehaviour
         // Check environment hazard (Slippery)
         if (collision.CompareTag("Slippery"))
         {
-            rb.linearDamping = 0f;
-            rb.angularDamping = 0f;
-            rb.mass = 0.5f;
+            rb.linearDamping = dampChange;
+            rb.angularDamping = angularDampChange;
+            rb.mass = massChange;
         }
     }
 

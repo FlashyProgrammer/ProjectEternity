@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6969862642261360126}
   - component: {fileID: 6887998441597023635}
   m_Layer: 0
-  m_Name: Slippery Ground
+  m_Name: Slippery Ground 2
   m_TagString: Slippery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26.64, y: 157.19, z: 0}
-  m_LocalScale: {x: 1.76, y: 0.2, z: 1}
+  m_LocalScale: {x: 4.47, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

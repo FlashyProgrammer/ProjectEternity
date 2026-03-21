@@ -10,6 +10,7 @@ TagManager:
   - Hazard
   - Checkpoint
   - Point
+  - Prompt
   layers:
   - Default
   - TransparentFX

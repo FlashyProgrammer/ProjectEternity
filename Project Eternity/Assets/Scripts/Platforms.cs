@@ -26,48 +26,55 @@ public class Platforms : MonoBehaviour
     {
         platformCollider = GetComponent<Collider2D>();
         platformRenderer = GetComponent<SpriteRenderer>();
-        currentPoint = movePoints[index];
-    }
-    private void Update()
-    {
-        if (isStatic)
-        {
-            return;
-        }
-
-        Debug.Log(index);
 
         if (isMoving)
         {
-            if (transform.position != currentPoint.position)
+            currentPoint = movePoints[index];
+
+        }
+    }
+    private void Update()
+    {
+        if (isMoving)
+        {
+            currentPoint = movePoints[index];
+
+            if (Vector2.Distance(transform.position, currentPoint.position) < 0.01f)
             {
-                transform.position = Vector2.Lerp(transform.position, currentPoint.position, platformSpeed);
+                index++;
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, currentPoint.position, platformSpeed * Time.deltaTime);
+
             }
 
             if (index == movePoints.Length)
             {
                 index = 0;
-                currentPoint = movePoints[index];
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Point"))
-        {
-            if (isMoving)
-            {
-                index++;
-                currentPoint = movePoints[index];
-            }
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && isFragile)
         {
             StartCoroutine(platformDissolve());
+        }
+
+        if (collision.gameObject.CompareTag("Player") && isMoving)
+        {
+            
+            collision.transform.SetParent(this.gameObject.transform);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && isMoving)
+        {
+            collision.transform.parent = null;
         }
     }
 

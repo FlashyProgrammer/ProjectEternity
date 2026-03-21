@@ -44,7 +44,6 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(Flash());
         StartCoroutine(TypeLine(line));
-        StartCoroutine(DisplayTimer());
     }
 
     IEnumerator TypeLine(string line)
@@ -57,11 +56,6 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
            
         }
-    }
-    IEnumerator DisplayTimer()
-    {
-        yield return new WaitForSeconds(textTime);
-        DisplayNextLine(); 
     }
     
     private void EndDialogue()
