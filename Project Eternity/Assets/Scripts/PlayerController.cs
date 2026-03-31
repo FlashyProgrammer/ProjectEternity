@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Skills")]
     [SerializeField] private bool canFloat;
-    [SerializeField] private bool canAirDash;
+    [SerializeField] private bool canDash;
     [SerializeField] private int jumpAddition;
 
     private Vector3 originalScale;
@@ -81,18 +81,15 @@ public class PlayerController : MonoBehaviour
 
     void PlayerDash()
     {
-        dashTimer -= Time.fixedDeltaTime;
-
-        if (Input.GetKeyDown(KeyCode.Mouse2) && isGrounded && dashTimer <= 0)
+        if (canDash)
         {
-            dashTimer = dashCooltime;
-            applyDash = true;
-        }
+            dashTimer -= Time.fixedDeltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Mouse2) && canAirDash && dashTimer <=0)
-        {
-            dashTimer = dashCooltime;
-            applyDash = true;
+            if (Input.GetKeyDown(KeyCode.Mouse2) && dashTimer <= 0)
+            {
+                dashTimer = dashCooltime;
+                applyDash = true;
+            }
         }
     }
     void PlayerJump()

@@ -11,6 +11,9 @@ TagManager:
   - Checkpoint
   - Point
   - Prompt
+  - Enemy
+  - Key
+  - Bounce
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - Ground
   - Level
   - Player
-  - 
+  - Bounce
   - 
   - 
   - 

@@ -5,11 +5,12 @@ public class PlayerEffects : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float airForce;
     [SerializeField] private float followSpeed;
-    [SerializeField] private Transform soulArea;
     [SerializeField] private float massChange;
     [SerializeField] private float dampChange;
     [SerializeField] private float angularDampChange;
-    private Transform characterSoul;
+    [SerializeField] private float bounceForce;
+    [SerializeField] private Transform soulArea;
+    public Transform followObject;
     private bool isDropped;
 
     private float originalDamping;
@@ -32,9 +33,9 @@ public class PlayerEffects : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isDropped && characterSoul != null)
+        if (!isDropped && followObject != null)
         {
-            characterSoul.transform.position = Vector2.Lerp(characterSoul.gameObject.transform.position, 
+            followObject.transform.position = Vector2.MoveTowards(followObject.gameObject.transform.position, 
                 soulArea.position, followSpeed * Time.fixedDeltaTime);
         }
     }
@@ -45,9 +46,25 @@ public class PlayerEffects : MonoBehaviour
         // Check environment hazard (Spikes)
         if (collision.gameObject.CompareTag("Hazard"))
         {
-            Debug.Log("Player hit hazard");
             transform.position = currentCheckPoint.position;
         }
+
+        // Soul Collisions
+        if (collision.gameObject.CompareTag("Key") && isDropped)
+        {
+            followObject = collision.transform;
+            followObject.parent = soulArea;
+            followObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
+            followObject.gameObject.GetComponent<Collider2D>().isTrigger = true;
+            isDropped = false;
+        }
+
+        if (collision.gameObject.CompareTag("Bounce")) 
+        {
+            rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+        }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,6 +73,20 @@ public class PlayerEffects : MonoBehaviour
         if (collision.CompareTag("Checkpoint"))
         {
             currentCheckPoint = collision.transform;
+        }
+
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            transform.position = currentCheckPoint.position;
+        }
+
+        if (collision.gameObject.CompareTag("Key") && isDropped)
+        {
+            followObject = collision.transform;
+            followObject.parent = soulArea;
+            followObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
+            followObject.gameObject.GetComponent<Collider2D>().isTrigger = true;
+            isDropped = false;
         }
     }
 
@@ -67,12 +98,6 @@ public class PlayerEffects : MonoBehaviour
             Vector2 amount = new Vector2(0f, airForce);
             rb.AddForce(amount, ForceMode2D.Force);
             rb.gravityScale = 1f;
-        }
-        // Soul Collisions
-        if (collision.CompareTag("Soul") && isDropped)
-        {
-            characterSoul = collision.transform;
-            isDropped = false;
         }
         // Check environment hazard (Slippery)
         if (collision.CompareTag("Slippery"))
@@ -96,10 +121,13 @@ public class PlayerEffects : MonoBehaviour
 
     public void DropSoul()
     {
-        Debug.Log("Input detected");
-        if (characterSoul != null && isDropped == false)
+        if (followObject != null && isDropped == false)
         {
-            characterSoul.transform.position = soulArea.position;
+            followObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
+            followObject.parent = null;
+            followObject.transform.position = soulArea.position;
+            followObject.gameObject.GetComponent<Collider2D>().isTrigger = false;
+            followObject = null;
             isDropped = true;
         }
     }

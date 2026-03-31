@@ -17,6 +17,7 @@ public class Platforms : MonoBehaviour
     [SerializeField] private float disappearTime;
     [SerializeField] private float reappearTime;
 
+ 
     private Transform currentPoint;
     private int index = 0;
     private SpriteRenderer platformRenderer;
@@ -24,8 +25,20 @@ public class Platforms : MonoBehaviour
 
     private void Awake()
     {
+      
+
         platformCollider = GetComponent<Collider2D>();
         platformRenderer = GetComponent<SpriteRenderer>();
+
+        if (platformRenderer == null)
+        {
+            platformRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        if (platformCollider == null)
+        {
+            platformCollider = GetComponentInChildren<Collider2D>();
+        }
 
         if (isMoving)
         {
@@ -59,6 +72,11 @@ public class Platforms : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && isFragile)
+        {
+            StartCoroutine(platformDissolve());
+        }
+
+        if (collision.gameObject.CompareTag("Key") && isFragile)
         {
             StartCoroutine(platformDissolve());
         }

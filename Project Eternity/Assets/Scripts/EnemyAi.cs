@@ -40,7 +40,7 @@ public class EnemyAi : MonoBehaviour
     private Transform currentPoint;
     private bool hasSpawned = false;
     private float waitCounter;
-    private bool isInSight;
+    private bool inCircleSight;
     private bool isLinetRight;
     private bool isLineLeft;
 
@@ -61,7 +61,7 @@ public class EnemyAi : MonoBehaviour
     {
         if (isCircleDetection)
         {
-            isInSight = Physics2D.OverlapCircle(transform.position, circleDetectionRadius, playerLayer);
+            inCircleSight = Physics2D.OverlapCircle(transform.position, circleDetectionRadius, playerLayer);
         }
 
         if (isLineDetection)
@@ -70,7 +70,7 @@ public class EnemyAi : MonoBehaviour
             isLineLeft = Physics2D.Raycast(transform.position, -transform.right, lineDistance, playerLayer);
         }
 
-        if (isInSight && !hasSpawned)
+        if (inCircleSight && !hasSpawned)
         {
             StartCoroutine(SpawnTimer());
         }
@@ -127,6 +127,18 @@ public class EnemyAi : MonoBehaviour
                 var projectileRb = projectile.GetComponent<Rigidbody2D>();
                 projectileRb.linearVelocity = directionAngle * projectileForce;
                 projectileRb.linearVelocityX = -projectileRb.linearVelocityX; 
+
+                Destroy(projectile, objectDespawnTime);
+            }
+
+            if (inCircleSight)
+            {
+                float radianAngle = forceAngle * Mathf.Deg2Rad;
+                Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+                var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                var projectileRb = projectile.GetComponent<Rigidbody2D>();
+                projectileRb.linearVelocity = directionAngle * projectileForce;
+                projectileRb.linearVelocityX = UnityEngine.Random.Range(-projectileRb.linearVelocityX, projectileRb.linearVelocityX);
 
                 Destroy(projectile, objectDespawnTime);
             }
