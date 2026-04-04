@@ -11,8 +11,8 @@ public class PlayerEffects : MonoBehaviour
     [SerializeField] private float bounceForce;
     [SerializeField] private Transform soulArea;
     public Transform followObject;
-    private bool isDropped;
 
+    public bool isDropped;
     private float originalDamping;
     private float originalAngularDaming;
     private float originalMass;

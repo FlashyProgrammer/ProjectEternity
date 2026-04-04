@@ -4,9 +4,14 @@ public class ActivationManager : MonoBehaviour
 {
     [SerializeField] private EnemyAi activateEnemy;
     [SerializeField] private Platforms activatePlatform;
+    [SerializeField] private ActivationManager nextActivation;
     [SerializeField] private Transform requiredKey;
     [SerializeField] private float keyAttachSpeed;
     [SerializeField] private bool isLocked;
+
+    public int numberOfKeys;
+
+    public int acuiredKeys;
     private Transform currentKey;
 
     private void Awake()
@@ -22,13 +27,14 @@ public class ActivationManager : MonoBehaviour
             {
                 activatePlatform.enabled = false;
             }
+
         }
     }
     private void Update()
     {
         if (currentKey != null)
         {
-            if (currentKey = requiredKey)
+            if (currentKey == requiredKey)
             {
                 currentKey.parent = null;
                 currentKey.transform.position = Vector2.MoveTowards(currentKey.transform.position, transform.position, keyAttachSpeed);
@@ -40,14 +46,17 @@ public class ActivationManager : MonoBehaviour
                 
                 if (activateEnemy != null)
                 {
-
-                
                     activateEnemy.enabled = true;
                 }
 
                 if (activatePlatform != null)
                 {
                     activatePlatform.enabled = true;
+                }
+
+                if (nextActivation != null)
+                {
+                    nextActivation.enabled = true;
                 }
             }
 
@@ -56,9 +65,25 @@ public class ActivationManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && numberOfKeys == acuiredKeys)
         {
             currentKey = other.GetComponent<PlayerEffects>().followObject;
+
+            if (currentKey != null)
+            {
+                if (currentKey == requiredKey)
+                {
+                    other.GetComponent<PlayerEffects>().isDropped = true;
+
+                    if (nextActivation.enabled == true)
+                    {
+                        nextActivation.acuiredKeys++;
+                        nextActivation.numberOfKeys = nextActivation.acuiredKeys;
+                    }  
+                }
+  
+            }
+
         }
     }
 }
