@@ -8,14 +8,17 @@ public class ActivationManager : MonoBehaviour
     [SerializeField] private Transform requiredKey;
     [SerializeField] private float keyAttachSpeed;
     [SerializeField] private bool isLocked;
+    [SerializeField] private bool isTwoPart;
+    [SerializeField] private int maxKeys;
 
-    public int numberOfKeys;
-
-    public int acuiredKeys;
+    [HideInInspector] public int numberOfKeys;
+    private bool isCompleted;
     private Transform currentKey;
 
     private void Awake()
     {
+        numberOfKeys = 0;
+
         if (isLocked)
         {
             if (activateEnemy != null)
@@ -42,30 +45,26 @@ public class ActivationManager : MonoBehaviour
                 if (Vector2.Distance(currentKey.position,transform.position) < 0.01f)
                 {
                     currentKey.gameObject.SetActive(false);
+                    currentKey = null;
                 }
                 
-                if (activateEnemy != null)
+                if (activateEnemy != null && isCompleted)
                 {
                     activateEnemy.enabled = true;
                 }
 
-                if (activatePlatform != null)
+                if (activatePlatform != null && isCompleted)
                 {
                     activatePlatform.enabled = true;
                 }
 
-                if (nextActivation != null)
-                {
-                    nextActivation.enabled = true;
-                }
             }
 
         }
-        Debug.Log(currentKey);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && numberOfKeys == acuiredKeys)
+        if (other.CompareTag("Player") && !isTwoPart)
         {
             currentKey = other.GetComponent<PlayerEffects>().followObject;
 
@@ -74,16 +73,34 @@ public class ActivationManager : MonoBehaviour
                 if (currentKey == requiredKey)
                 {
                     other.GetComponent<PlayerEffects>().isDropped = true;
-
-                    if (nextActivation.enabled == true)
-                    {
-                        nextActivation.acuiredKeys++;
-                        nextActivation.numberOfKeys = nextActivation.acuiredKeys;
-                    }  
+                    other.GetComponent<PlayerEffects>().followObject = null;
+                    isCompleted = true;
+                    
                 }
-  
             }
 
+        }
+
+        if (other.CompareTag("Player") && isTwoPart)
+        {
+            currentKey = other.GetComponent<PlayerEffects>().followObject;
+
+            if (currentKey != null)
+            {
+                if (currentKey == requiredKey)
+                {
+                    other.GetComponent<PlayerEffects>().isDropped = true;
+                    other.GetComponent<PlayerEffects>().followObject = null;
+
+                    numberOfKeys++;
+
+                    if (numberOfKeys + nextActivation.numberOfKeys == maxKeys)
+                    {
+                        isCompleted = true;
+                    }
+
+                }
+            }
         }
     }
 }

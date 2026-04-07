@@ -40,7 +40,7 @@ public class Platforms : MonoBehaviour
             platformCollider = GetComponentInChildren<Collider2D>();
         }
 
-        if (isMoving)
+        if (isMoving && movePoints != null)
         {
             currentPoint = movePoints[index];
 
@@ -48,7 +48,7 @@ public class Platforms : MonoBehaviour
     }
     private void Update()
     {
-        if (isMoving)
+        if (isMoving && movePoints != null)
         {
             currentPoint = movePoints[index];
 

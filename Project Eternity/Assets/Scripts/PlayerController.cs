@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int jumpAddition;
 
     private Vector3 originalScale;
-    private bool canAirJump;
     private bool applyAirJump;
     private int jumpCounter;
     private bool applyDash;
