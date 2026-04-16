@@ -12,10 +12,15 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private bool isLineDetection;
     [SerializeField] private bool isCircleDetection;
 
-    [Header("Enemy Type")]
+    [Header("Grounded Parameters")]
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float circleRadius;
+
+    [Header("Enemy Behaviour")]
     [SerializeField] private bool isPatrol; 
     [SerializeField] private bool isOneTime;
     [SerializeField] private bool isProjectile;
+    [SerializeField] private bool canCeilingWalk;
 
     [Header("Enemy Parameters")]
     [SerializeField] private float spawnRate;
@@ -27,7 +32,6 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float minForceAngle;
     [SerializeField] private float maxForceAngle;
     [SerializeField] private float projectileForce;
-    [SerializeField] private float forceAngle;
 
     [Header("Patrol Parameters")]
     [SerializeField] private Transform[] patrolPoints;
@@ -35,6 +39,10 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float waitTime;
 
+    private bool isGrounded;
+    private float forceAngle;
+    private GameObject projectile;
+    private Rigidbody2D enemyRb;
     private int index = 0;
     private Vector3 currentPosition;
     private Transform currentPoint;
@@ -45,20 +53,33 @@ public class EnemyAi : MonoBehaviour
     private bool isLineLeft;
 
 
-    private void Awake()
+    private void Start()
     {
+        enemyRb = GetComponent<Rigidbody2D>();
+        
         if (isPatrol)
         {
             currentPosition = transform.position;
             currentPoint = patrolPoints[index];
         }
+
     }
     private void Update()
     {
         EnemyPatrol();
+        
     }
     private void FixedUpdate()
     {
+        isGrounded = Physics2D.OverlapCircle(transform.position, circleRadius, groundLayer);
+
+        Debug.Log(isGrounded);
+
+        if (!isGrounded)
+        {
+            transform.parent = null;
+        }
+
         if (isCircleDetection)
         {
             inCircleSight = Physics2D.OverlapCircle(transform.position, circleDetectionRadius, playerLayer);
@@ -84,19 +105,57 @@ public class EnemyAi : MonoBehaviour
         {
             StartCoroutine(SpawnTimer());
         }
-
         Debug.DrawRay(transform.position, transform.right * lineDistance, Color.purple);
         Debug.DrawRay(transform.position, -transform.right * lineDistance, Color.purple);
     }
 
     private IEnumerator SpawnTimer()
     {
-        hasSpawned = true;
-
         if (isOneTime)
         {
             Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
             Destroy(this.gameObject, despawnTime);
+            hasSpawned = true;
+        }
+
+        if (isProjectile)
+        {
+            if (isLinetRight)
+            {
+                float radianAngle = forceAngle * Mathf.Deg2Rad;
+                Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+                projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                var projectileRb = projectile.GetComponent<Rigidbody2D>();
+                projectileRb.linearVelocity = directionAngle * projectileForce;
+                Destroy(projectile, objectDespawnTime);
+                hasSpawned = true;
+
+            }
+
+            if (isLineLeft)
+            {
+                float radianAngle = forceAngle * Mathf.Deg2Rad;
+                Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+                projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                var projectileRb = projectile.GetComponent<Rigidbody2D>();
+                projectileRb.linearVelocity = directionAngle * projectileForce;
+                projectileRb.linearVelocityX = -projectileRb.linearVelocityX;
+                Destroy(projectile, objectDespawnTime);
+                hasSpawned = true;
+            }
+
+            if (inCircleSight)
+            {
+                float radianAngle = forceAngle * Mathf.Deg2Rad;
+                Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+                projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                var projectileRb = projectile.GetComponent<Rigidbody2D>();
+                projectileRb.linearVelocity = directionAngle * projectileForce;
+                projectileRb.linearVelocityX = UnityEngine.Random.Range(-projectileRb.linearVelocityX, projectileRb.linearVelocityX);
+
+                Destroy(projectile, objectDespawnTime);
+                hasSpawned = true;
+            }
         }
 
         yield return new WaitForSeconds(spawnRate);
@@ -111,10 +170,9 @@ public class EnemyAi : MonoBehaviour
             {
                 float radianAngle = forceAngle * Mathf.Deg2Rad;
                 Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
-                var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
                 var projectileRb = projectile.GetComponent<Rigidbody2D>();
                 projectileRb.linearVelocity = directionAngle * projectileForce;
-
                 Destroy(projectile, objectDespawnTime);
 
             }
@@ -123,22 +181,10 @@ public class EnemyAi : MonoBehaviour
             {
                 float radianAngle = forceAngle * Mathf.Deg2Rad;
                 Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
-                var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
+                projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
                 var projectileRb = projectile.GetComponent<Rigidbody2D>();
                 projectileRb.linearVelocity = directionAngle * projectileForce;
                 projectileRb.linearVelocityX = -projectileRb.linearVelocityX; 
-
-                Destroy(projectile, objectDespawnTime);
-            }
-
-            if (inCircleSight)
-            {
-                float radianAngle = forceAngle * Mathf.Deg2Rad;
-                Vector2 directionAngle = new Vector2(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
-                var projectile = Instantiate(spawnObject, spawnArea.position, Quaternion.identity);
-                var projectileRb = projectile.GetComponent<Rigidbody2D>();
-                projectileRb.linearVelocity = directionAngle * projectileForce;
-                projectileRb.linearVelocityX = UnityEngine.Random.Range(-projectileRb.linearVelocityX, projectileRb.linearVelocityX);
 
                 Destroy(projectile, objectDespawnTime);
             }
@@ -177,11 +223,13 @@ public class EnemyAi : MonoBehaviour
             }
         }
     }
-
+   
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.purple;
         Gizmos.DrawWireSphere(transform.position, circleDetectionRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, circleRadius);
     }
 
 }

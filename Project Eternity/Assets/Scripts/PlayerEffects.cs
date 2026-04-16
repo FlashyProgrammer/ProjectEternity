@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerEffects : MonoBehaviour
@@ -10,15 +11,20 @@ public class PlayerEffects : MonoBehaviour
     [SerializeField] private float angularDampChange;
     [SerializeField] private float bounceForce;
     [SerializeField] private Transform soulArea;
+    [SerializeField] private float controllerDisableTime;
+    
     public Transform followObject;
 
+
     public bool isDropped;
+    private PlayerController controller;
     private float originalDamping;
     private float originalAngularDaming;
     private float originalMass;
     private Transform currentCheckPoint;
     private void Awake()
     {
+        controller = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -62,6 +68,12 @@ public class PlayerEffects : MonoBehaviour
         if (collision.gameObject.CompareTag("Bounce")) 
         {
             rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+        }
+
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Disable();
+            Destroy(collision.gameObject, 0.1f);
         }
 
 
@@ -117,6 +129,16 @@ public class PlayerEffects : MonoBehaviour
             rb.mass = originalMass;
 
         }
+    }
+
+    private void Disable()
+    {
+        transform.position = currentCheckPoint.position;
+        gameObject.SetActive(false);
+        controller.enabled = false;
+
+
+
     }
 
     public void DropSoul()
