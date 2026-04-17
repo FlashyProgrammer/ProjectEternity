@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerEffects : MonoBehaviour
 {
     private Rigidbody2D rb;
+
     [SerializeField] private float airForce;
     [SerializeField] private float followSpeed;
     [SerializeField] private float massChange;
@@ -12,11 +14,14 @@ public class PlayerEffects : MonoBehaviour
     [SerializeField] private float bounceForce;
     [SerializeField] private Transform soulArea;
     [SerializeField] private float controllerDisableTime;
-    
-    public Transform followObject;
+    [SerializeField] private PlayerHealth soulHealth;
 
 
-    public bool isDropped;
+    [HideInInspector] public Transform followObject;
+
+
+    [HideInInspector] public bool isDropped;
+
     private PlayerController controller;
     private float originalDamping;
     private float originalAngularDaming;
@@ -36,6 +41,10 @@ public class PlayerEffects : MonoBehaviour
         originalMass = rb.mass;
         
     }
+    private void Update()
+    {
+        PlayerInputs();
+    }
 
     private void FixedUpdate()
     {
@@ -46,13 +55,13 @@ public class PlayerEffects : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check environment hazard (Spikes)
         if (collision.gameObject.CompareTag("Hazard"))
         {
             transform.position = currentCheckPoint.position;
+            soulHealth.TakeDamage();
         }
 
         // Soul Collisions
@@ -73,6 +82,7 @@ public class PlayerEffects : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Disable();
+            soulHealth.TakeDamage();
             Destroy(collision.gameObject, 0.1f);
         }
 
@@ -90,6 +100,7 @@ public class PlayerEffects : MonoBehaviour
         if (collision.gameObject.CompareTag("Hazard"))
         {
             transform.position = currentCheckPoint.position;
+            soulHealth.TakeDamage();    
         }
 
         if (collision.gameObject.CompareTag("Key") && isDropped)
@@ -137,10 +148,14 @@ public class PlayerEffects : MonoBehaviour
         gameObject.SetActive(false);
         controller.enabled = false;
 
-
-
     }
-
+    void PlayerInputs()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            DropSoul();
+        }
+    }
     public void DropSoul()
     {
         if (followObject != null && isDropped == false)

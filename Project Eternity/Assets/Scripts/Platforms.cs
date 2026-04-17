@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class Platforms : MonoBehaviour
 {
@@ -17,7 +17,10 @@ public class Platforms : MonoBehaviour
     [SerializeField] private float disappearTime;
     [SerializeField] private float reappearTime;
 
- 
+
+     public Scene scene;
+
+
     private Transform currentPoint;
     private int index = 0;
     private SpriteRenderer platformRenderer;

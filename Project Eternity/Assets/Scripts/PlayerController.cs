@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float circleRadius;
     [SerializeField] private Transform playerSprite;
+
+
 
     [Header("Player Parameters")]
     [SerializeField] private float playerSpeed;
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool canDash;
     [SerializeField] private int jumpAddition;
 
+
+    
     private Vector3 originalScale;
     private bool applyAirJump;
     private int jumpCounter;
@@ -51,6 +56,7 @@ public class PlayerController : MonoBehaviour
         PlayerJump();
         PlayerDash();
         flipSprite();
+
     }
 
     private void FixedUpdate()
@@ -97,7 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             jumpBufferTimer = jumpBufferTime;
             rb.gravityScale = originalGravity;
-
+            Debug.Log("Jump Pressed");
         }
 
         if(Input.GetButtonDown("Jump") && jumpCounter != jumpAddition)

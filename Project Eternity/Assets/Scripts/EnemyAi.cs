@@ -73,8 +73,6 @@ public class EnemyAi : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(transform.position, circleRadius, groundLayer);
 
-        Debug.Log(isGrounded);
-
         if (!isGrounded)
         {
             transform.parent = null;

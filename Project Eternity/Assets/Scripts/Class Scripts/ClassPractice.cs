@@ -41,35 +41,15 @@ public class ClassPractice : MonoBehaviour
 
         nameAge = new Dictionary<string, int> { { "Michael", 22 }, { "Sarah", 25 }, { "David", 30 }, { "Emily", 28 },{ "George", 29} };
 
-
-        
-        
-
     }
 
     void Start()
     {
         Debug.Log("The Third value in the dictionary is: " + nameAge.ElementAt(2).Value);
 
-        for (int i = 0; i <= intNumbers.Count; i++)
-        {
-            if (intNumbers[i] == 5)
-            {
-                Debug.Log("Found 5");
-            }
-        }
+      
 
-        foreach (string name in charName)
-        {
-            Debug.Log(name);
-
-        }
-
-
-        if (nameAge.TryGetValue(nameAge.Keys.ElementAt(3), out int key))
-        {
-            nameAge.Remove(nameAge.Keys.ElementAt(3));
-        }
+      
     }
     void Division(float value1, float value2)
     {
