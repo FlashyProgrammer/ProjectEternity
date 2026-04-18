@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e787bb2f794a6a4695134e4583867ae, type: 3}
   m_Name: Lunar
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  name: Lunar
+  charName: 
   characterSprite: {fileID: -3472441004445017838, guid: 39df9530305d39649b45814edcb19af6, type: 3}
   lines:
   - 'Hello my budacious big booty warriors!!!!

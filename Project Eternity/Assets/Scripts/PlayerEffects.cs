@@ -18,7 +18,7 @@ public class PlayerEffects : MonoBehaviour
 
 
     [HideInInspector] public Transform followObject;
-
+    
 
     [HideInInspector] public bool isDropped;
 
@@ -40,10 +40,6 @@ public class PlayerEffects : MonoBehaviour
         originalAngularDaming = rb.angularDamping;
         originalMass = rb.mass;
         
-    }
-    private void Update()
-    {
-        PlayerInputs();
     }
 
     private void FixedUpdate()
@@ -148,13 +144,6 @@ public class PlayerEffects : MonoBehaviour
         gameObject.SetActive(false);
         controller.enabled = false;
 
-    }
-    void PlayerInputs()
-    {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            DropSoul();
-        }
     }
     public void DropSoul()
     {

@@ -28,7 +28,11 @@ public class DialogueSpace : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        markSprite.SetActive(false);
+        if (markSprite != null)
+        {
+            markSprite.SetActive(false);
+
+        }
         talkButton.onClick.RemoveListener(dialogueToTrigger.EnableTrigger);
     }
 }

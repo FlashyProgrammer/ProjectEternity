@@ -17,6 +17,10 @@ public class Platforms : MonoBehaviour
     [SerializeField] private float disappearTime;
     [SerializeField] private float reappearTime;
 
+    [Header("Player Ability Effect")]
+    public bool objHide;
+    public bool objShow;
+
 
      public Scene scene;
 
@@ -29,7 +33,6 @@ public class Platforms : MonoBehaviour
     private void Awake()
     {
       
-
         platformCollider = GetComponent<Collider2D>();
         platformRenderer = GetComponent<SpriteRenderer>();
 
@@ -47,6 +50,24 @@ public class Platforms : MonoBehaviour
         {
             currentPoint = movePoints[index];
 
+        }
+
+        if (objHide)
+        {
+            if (GetComponent<Platforms>() != null)
+            {
+                GetComponent<Platforms>().enabled = false;
+            }
+
+            if (GetComponent<Collider2D>() != null)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
+
+            if (gameObject.GetComponentInChildren<SpriteRenderer>() != null)
+            {
+                gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            }
         }
     }
     private void Update()

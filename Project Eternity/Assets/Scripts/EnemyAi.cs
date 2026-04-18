@@ -39,6 +39,10 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float waitTime;
 
+    [Header("Player Ability Effects")]
+    public bool objHide;
+    public bool objShow;
+
     private bool isGrounded;
     private float forceAngle;
     private GameObject projectile;
@@ -61,6 +65,29 @@ public class EnemyAi : MonoBehaviour
         {
             currentPosition = transform.position;
             currentPoint = patrolPoints[index];
+        }
+
+        if (objHide)
+        {
+            if (GetComponent<EnemyAi>() != null)
+            {
+                GetComponent<EnemyAi>().enabled = false; 
+            }
+
+            if (GetComponent<Collider2D>() != null)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
+
+            if (GetComponent<Rigidbody2D>() != null)
+            {
+                GetComponent<Rigidbody2D>().Sleep();
+            }
+
+            if (gameObject.GetComponentInChildren<SpriteRenderer>() != null)
+            {
+                gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            }
         }
 
     }
@@ -212,6 +239,7 @@ public class EnemyAi : MonoBehaviour
             else
             {
                 currentPosition.x = Mathf.MoveTowards(transform.position.x, currentPoint.position.x, patrolSpeed * Time.deltaTime);
+                enemyRb.MovePosition(currentPosition);
                 transform.position = currentPosition;
             }
 
