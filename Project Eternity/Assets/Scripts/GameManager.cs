@@ -18,11 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button abilityButtonOne;
     [SerializeField] private Button abilityButtonTwo;
 
-    [Header("Scene Management")]
-    private Scene deathScene;
-    private Scene menuScene;
-    private Scene gameScene;
-    private Scene startScene;
 
  
     private PlayerController controller;
