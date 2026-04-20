@@ -6,11 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/UI/Play Screen.unity
+    guid: 783c88d21245c374c8355746bc841b4b
+  - enabled: 1
     path: Assets/Scenes/Prototype/Interaction Window.unity
     guid: 245c590dfdfd96642862d4bcafe39637
   - enabled: 1
     path: Assets/Scenes/Prototype/Prototype.unity
     guid: 38002380c58caf145b22afbc260064ee
+  - enabled: 1
+    path: Assets/Scenes/UI/Death Screen.unity
+    guid: 33f45c6cf6af80646a55a14e94c6e986
+  - enabled: 1
+    path: Assets/Scenes/UI/Win Screen.unity
+    guid: 275724611190af846968be666ff12aff
+  - enabled: 1
+    path: Assets/Scenes/UI/Pause Menu.unity
+    guid: 6fdb565b0bf95224da0cc08f0db23139
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

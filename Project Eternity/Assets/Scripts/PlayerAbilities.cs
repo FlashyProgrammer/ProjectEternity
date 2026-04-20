@@ -8,6 +8,7 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private DialogueManager talkDialogue;
     [SerializeField] private float abilityTime;
     [SerializeField] private float freezeCooldown;
+    [SerializeField] private AudioManager audioManager;
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
@@ -59,6 +60,8 @@ public class PlayerAbilities : MonoBehaviour
     public void Freeze()
     {
         abilityInt = 1;
+        audioManager.SetClipAbility(audioManager.timeStop);
+        audioManager.audioSourceAbilities.Play();
         if (!abilityInUse && gameObject.activeInHierarchy && timeCounter < 0f)
         {
             StartCoroutine(FreezeAbility());   
