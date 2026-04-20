@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Section 3 Intro
   m_EditorClassIdentifier: Assembly-CSharp::Character
   charName: Eternity
-  characterSprite: {fileID: -3472441004445017838, guid: 39df9530305d39649b45814edcb19af6, type: 3}
+  characterSprite: {fileID: 5220669003854583097, guid: 9b124418c9aaeda4aa715866eb72a774, type: 3}
   lines:
   - It's Time....
   - You must guide the soul to the extraction point.
