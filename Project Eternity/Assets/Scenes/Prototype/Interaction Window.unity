@@ -1539,7 +1539,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.62, y: 2.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2955,7 +2955,7 @@ Transform:
   m_GameObject: {fileID: 1227135780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -74.29778, y: 43.839996, z: -10}
+  m_LocalPosition: {x: -62.887783, y: 35.429996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4326,7 +4326,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.8
-  m_LinearDamping: 2.5
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_GravityScale: 1.2
   m_Material: {fileID: 0}
@@ -4349,7 +4349,7 @@ Transform:
   m_GameObject: {fileID: 1698876935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -74.92, y: 41.74, z: 0}
+  m_LocalPosition: {x: -63.51, y: 33.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4375,12 +4375,12 @@ MonoBehaviour:
   angularDampChange: 0.5
   bounceForce: 4
   soulHealth: {fileID: 1707790621}
-  generalDamage: 10
-  gradualDamage: 5
-  gradualDecreaseTime: 5
+  generalDamage: 20
+  gradualDamage: 25
+  gradualDecreaseTime: 10
   controllerDisableTime: 0.5
   soulArea: {fileID: 1918513479}
-  followObject: {fileID: 1240496834}
+  followObject: {fileID: 0}
   isDropped: 0
 --- !u!114 &1698876941
 MonoBehaviour:
@@ -4413,7 +4413,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7454d70df6b046b49a3b640365048e9f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4437,8 +4437,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.005771637, y: 0.4006462}
-  m_Size: {x: 0.20760345, y: 0.7960739}
+  m_Offset: {x: -0.04838562, y: 0.4006462}
+  m_Size: {x: 0.32987976, y: 0.7960739}
   m_Direction: 0
 --- !u!1 &1707790618
 GameObject:
