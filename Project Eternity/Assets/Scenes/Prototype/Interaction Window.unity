@@ -2955,7 +2955,7 @@ Transform:
   m_GameObject: {fileID: 1227135780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -92.057785, y: 29.479994, z: -10}
+  m_LocalPosition: {x: -74.29778, y: 43.839996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4349,7 +4349,7 @@ Transform:
   m_GameObject: {fileID: 1698876935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -92.68, y: 27.38, z: 0}
+  m_LocalPosition: {x: -74.92, y: 41.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4478,7 +4478,7 @@ MonoBehaviour:
   optionButtonOne: {fileID: 1720542272}
   optionButtonTwo: {fileID: 290763226}
   abilityButtonOne: {fileID: 894425958}
-  abilityButtonTwo: {fileID: 0}
+  abilityButtonTwo: {fileID: 1084625645}
 --- !u!4 &1707790620
 Transform:
   m_ObjectHideFlags: 0
