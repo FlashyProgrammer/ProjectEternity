@@ -11,6 +11,7 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private float lineDistance;
     [SerializeField] private bool isLineDetection;
     [SerializeField] private bool isCircleDetection;
+    public bool toBeActivated;
 
     [Header("Grounded Parameters")]
     [SerializeField] private LayerMask groundLayer;

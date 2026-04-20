@@ -11,6 +11,7 @@ public class ActivationManager : MonoBehaviour
     [SerializeField] private bool isTwoPart;
     [SerializeField] private int maxKeys;
 
+    [SerializeField] private PlayerEffects playerConditions;
     [HideInInspector] public int numberOfKeys;
     private bool isCompleted;
     private Transform currentKey;
@@ -29,12 +30,14 @@ public class ActivationManager : MonoBehaviour
             if (activatePlatform != null)
             {
                 activatePlatform.enabled = false;
+                
             }
 
         }
     }
     private void Update()
     {
+        Debug.Log(isCompleted);
         if (currentKey != null)
         {
             if (currentKey == requiredKey)
@@ -56,6 +59,13 @@ public class ActivationManager : MonoBehaviour
                 if (activatePlatform != null && isCompleted)
                 {
                     activatePlatform.enabled = true;
+                    if (playerConditions != null)
+                    {
+                        playerConditions.GetComponent<PlayerEffects>().DropSoul();
+
+                    }
+                    activatePlatform.isToBeActivated = false;
+
                 }
 
             }
@@ -64,6 +74,7 @@ public class ActivationManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        playerConditions = other.GetComponent<PlayerEffects>();
         if (other.CompareTag("Player") && !isTwoPart)
         {
             currentKey = other.GetComponent<PlayerEffects>().followObject;
@@ -72,8 +83,7 @@ public class ActivationManager : MonoBehaviour
             {
                 if (currentKey == requiredKey)
                 {
-                    other.GetComponent<PlayerEffects>().isDropped = true;
-                    other.GetComponent<PlayerEffects>().followObject = null;
+                    playerConditions.DropSoul();
                     isCompleted = true;
                     
                 }
@@ -83,24 +93,26 @@ public class ActivationManager : MonoBehaviour
 
         if (other.CompareTag("Player") && isTwoPart)
         {
+
             currentKey = other.GetComponent<PlayerEffects>().followObject;
 
             if (currentKey != null)
             {
                 if (currentKey == requiredKey)
                 {
-                    other.GetComponent<PlayerEffects>().isDropped = true;
-                    other.GetComponent<PlayerEffects>().followObject = null;
-
+                    playerConditions.DropSoul();
                     numberOfKeys++;
 
                     if (numberOfKeys + nextActivation.numberOfKeys == maxKeys)
                     {
+             
                         isCompleted = true;
                     }
 
                 }
             }
         }
+
+
     }
 }

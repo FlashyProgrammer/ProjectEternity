@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         originalGravity = GetComponent<Rigidbody2D>().gravityScale;
         originalScale = playerSprite.localScale;
         rb = GetComponent<Rigidbody2D>();

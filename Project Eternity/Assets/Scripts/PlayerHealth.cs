@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;   
 
@@ -5,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private float soulHealth;
-    [SerializeField] private float soulDamage;
+    [SerializeField] private float decreaseTime;
 
     private void Awake()
     {
@@ -13,9 +14,9 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = soulHealth;
 
     }
-    public void TakeDamage()
+    public void TakeDamage(float amount)
     {
-        soulHealth -= soulDamage;
+        soulHealth -= amount;
         healthSlider.value = soulHealth;
 
 

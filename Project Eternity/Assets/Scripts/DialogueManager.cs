@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float textTime;
     [SerializeField] private Image portraitPos; 
     private Queue<string> lineList;
+    
     void Awake()
     {
         lineList = new Queue<string>();

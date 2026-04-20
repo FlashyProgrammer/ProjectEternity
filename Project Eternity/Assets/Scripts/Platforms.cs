@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class Platforms : MonoBehaviour
 {
+    [Header("Platform parameters")]
     [SerializeField] private bool isFragile;
     [SerializeField] private bool isMoving;
     [SerializeField] private bool isStatic;
+    public bool isToBeActivated;
 
     [Header("Move Parameters")]
     [SerializeField] private float platformSpeed;
@@ -21,8 +23,6 @@ public class Platforms : MonoBehaviour
     public bool objHide;
     public bool objShow;
 
-
-     public Scene scene;
 
 
     private Transform currentPoint;

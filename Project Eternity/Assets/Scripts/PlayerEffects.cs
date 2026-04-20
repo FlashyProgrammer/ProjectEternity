@@ -6,22 +6,34 @@ public class PlayerEffects : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    [Header("Movement")]
     [SerializeField] private float airForce;
     [SerializeField] private float followSpeed;
     [SerializeField] private float massChange;
     [SerializeField] private float dampChange;
     [SerializeField] private float angularDampChange;
     [SerializeField] private float bounceForce;
-    [SerializeField] private Transform soulArea;
-    [SerializeField] private float controllerDisableTime;
+
+    [Header("Health Parameters")]
     [SerializeField] private PlayerHealth soulHealth;
+    [SerializeField] private float generalDamage;
+    [SerializeField] private float gradualDamage;
+    [SerializeField] private float gradualDecreaseTime;
+
+    [Header("Misc Parameters")]
+    [SerializeField] private float controllerDisableTime;
+    [SerializeField] private Transform soulArea;
 
 
-    [HideInInspector] public Transform followObject;
+
+    public Transform followObject;
     
 
     [HideInInspector] public bool isDropped;
 
+
+    private bool startCounter = true;
+    private float timeCounter;
     private PlayerController controller;
     private float originalDamping;
     private float originalAngularDaming;
@@ -44,10 +56,39 @@ public class PlayerEffects : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (!isDropped && followObject != null)
         {
             followObject.transform.position = Vector2.MoveTowards(followObject.gameObject.transform.position, 
                 soulArea.position, followSpeed * Time.fixedDeltaTime);
+        }
+        if (startCounter)
+        {
+            timeCounter -= Time.fixedDeltaTime;
+        }
+
+        if (timeCounter < 0)
+        {
+            soulHealth.TakeDamage(gradualDamage);
+            timeCounter = gradualDecreaseTime;
+        }
+
+        if (followObject == null)
+        {
+            startCounter = true;
+        }
+
+        else
+        {
+            if (followObject.gameObject.name == "Soul")
+            {
+                startCounter = false;
+            }
+
+            else
+            {
+                startCounter = true;
+            }
         }
     }
 
@@ -57,7 +98,12 @@ public class PlayerEffects : MonoBehaviour
         if (collision.gameObject.CompareTag("Hazard"))
         {
             transform.position = currentCheckPoint.position;
-            soulHealth.TakeDamage();
+            if (soulArea.gameObject.name == "Soul")
+            {
+                soulHealth.TakeDamage(generalDamage);
+            }
+
+            Disable();
         }
 
         // Soul Collisions
@@ -78,11 +124,34 @@ public class PlayerEffects : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Disable();
-            soulHealth.TakeDamage();
+            if (followObject != null)
+            {
+                if (followObject.gameObject.name == "Soul")
+                {
+                    soulHealth.TakeDamage(generalDamage);
+                }
+            }
             Destroy(collision.gameObject, 0.1f);
         }
 
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            transform.position = currentCheckPoint.position;
+
+            if (followObject != null)
+            {
+                if (followObject.gameObject.name == "Soul")
+                {
+                    soulHealth.TakeDamage(generalDamage);
+                }
+            }
+            Disable();
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -96,7 +165,15 @@ public class PlayerEffects : MonoBehaviour
         if (collision.gameObject.CompareTag("Hazard"))
         {
             transform.position = currentCheckPoint.position;
-            soulHealth.TakeDamage();    
+
+            if (followObject != null)
+            {
+                if (followObject.gameObject.name == "Soul")
+                {
+                    soulHealth.TakeDamage(generalDamage);
+                }
+            }
+            Disable();
         }
 
         if (collision.gameObject.CompareTag("Key") && isDropped)
@@ -145,6 +222,7 @@ public class PlayerEffects : MonoBehaviour
         controller.enabled = false;
 
     }
+ 
     public void DropSoul()
     {
         if (followObject != null && isDropped == false)
