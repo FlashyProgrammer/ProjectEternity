@@ -15,6 +15,7 @@ TagManager:
   - Key
   - Bounce
   - Projectile
+  - Extraction
   layers:
   - Default
   - TransparentFX

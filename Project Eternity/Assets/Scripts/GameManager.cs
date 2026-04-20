@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             Debug.Log("Button pressed");
@@ -58,7 +59,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-
     private IEnumerator EnableTime()
     {
       
@@ -69,5 +69,7 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+
 }
  

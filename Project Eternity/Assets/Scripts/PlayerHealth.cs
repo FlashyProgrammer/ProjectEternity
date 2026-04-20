@@ -4,9 +4,18 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private UiManager uiManager;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private float soulHealth;
     [SerializeField] private float decreaseTime;
+
+    private void Update()
+    {
+        if (soulHealth <= 0)
+        {
+            uiManager.DeathScreen();
+        }
+    }
 
     private void Awake()
     {

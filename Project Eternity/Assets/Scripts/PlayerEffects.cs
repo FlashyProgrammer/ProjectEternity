@@ -24,6 +24,8 @@ public class PlayerEffects : MonoBehaviour
     [SerializeField] private float controllerDisableTime;
     [SerializeField] private Transform soulArea;
 
+    [Header("UI")]
+    [SerializeField] private UiManager uiManager;
 
 
     public Transform followObject;
@@ -183,6 +185,14 @@ public class PlayerEffects : MonoBehaviour
             followObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
             followObject.gameObject.GetComponent<Collider2D>().isTrigger = true;
             isDropped = false;
+        }
+
+        if (collision.gameObject.CompareTag("Extraction"))
+        {
+            if (followObject != null && followObject.name == "Soul")
+            {
+                uiManager.WinScreen();
+            }
         }
     }
 

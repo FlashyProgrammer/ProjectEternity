@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool canDash;
     [SerializeField] private int jumpAddition;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager;
 
     
     private Vector3 originalScale;
@@ -184,6 +186,26 @@ public class PlayerController : MonoBehaviour
         
         rb.AddForce(movement, ForceMode2D.Force);
 
+        if (rb.linearVelocityX > 0f)
+        {
+            audioManager.SetClip(audioManager.walkSound);
+            audioManager.audioSource.Play();
+           
+        }
+        if (rb.linearVelocityX < 0f)
+        {
+     
+            audioManager.audioSource.Play();
+
+        }
+
+
+
+
+        if (rb.linearVelocityX == 0)
+        {
+            audioManager.audioSource.Stop();
+        }
         if (isGrounded)
         {
             coyoteTimer = coyoteTime;
