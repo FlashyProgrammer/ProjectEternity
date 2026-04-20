@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float circleRadius;
     [SerializeField] private Transform playerSprite;
 
-
+    public Animator animator;
 
     [Header("Player Parameters")]
     [SerializeField] private float playerSpeed;
@@ -44,6 +44,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    } 
     private void Awake()
     {
         originalGravity = GetComponent<Rigidbody2D>().gravityScale;
@@ -57,6 +61,9 @@ public class PlayerController : MonoBehaviour
         PlayerDash();
         flipSprite();
 
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetFloat("magnitude", rb.linearVelocity.magnitude);
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     private void FixedUpdate()
@@ -106,11 +113,15 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Jump Pressed");
         }
 
-        if(Input.GetButtonDown("Jump") && jumpCounter != jumpAddition)
+
+        if (Input.GetButtonDown("Jump") && jumpCounter != jumpAddition)
         {
             applyAirJump = true;
             rb.gravityScale = originalGravity;
+
+            animator.SetTrigger("jump");
         }
+
 
         jumpBufferTimer -= Time.fixedDeltaTime;
     
@@ -125,6 +136,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
 
         if (Input.GetButton("Jump"))
         {
@@ -141,6 +153,7 @@ public class PlayerController : MonoBehaviour
                 rb.gravityScale = maxFallSpeed;
                 
             }
+         
         }
 
     }
