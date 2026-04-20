@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: de09e3f2bac73204bad1687afe29eb0e
+guid: 9b124418c9aaeda4aa715866eb72a774
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5173880735718813536
-    second: PsychopompLand_0
-  - first:
-      213: 1632737907157611320
-    second: PsychopompLand_1
-  - first:
-      213: -8615073795348597779
-    second: PsychopompLand_2
+      213: 5220669003854583097
+    second: Eternity portrait_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,67 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PsychopompLand_0
+      name: Eternity portrait_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 320
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
+        width: 3200
+        height: 3200
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a05e3d12eea238b0800000000000000
-      internalID: -5173880735718813536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PsychopompLand_1
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 320
-        height: 320
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 833b177d976a8a610800000000000000
-      internalID: 1632737907157611320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PsychopompLand_2
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 320
-        height: 320
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de3787a170c117880800000000000000
-      internalID: -8615073795348597779
+      spriteID: 93515a87cca837840800000000000000
+      internalID: 5220669003854583097
       vertices: []
       indices: 
       edges: []
@@ -175,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 78a6621390482024da38e1e350599be2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -183,13 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":320.0,"y":320.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      PsychopompLand_0: -5173880735718813536
-      PsychopompLand_1: 1632737907157611320
-      PsychopompLand_2: -8615073795348597779
+      Eternity portrait_0: 5220669003854583097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
