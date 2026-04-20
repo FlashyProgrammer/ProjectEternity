@@ -311,8 +311,8 @@ MonoBehaviour:
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  objHide: 0
-  objShow: 1
+  objHide: 1
+  objShow: 0
 --- !u!61 &17522565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5794,7 +5794,7 @@ MonoBehaviour:
   disappearTime: 0
   reappearTime: 0
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!61 &264034745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6991,7 +6991,7 @@ MonoBehaviour:
   disappearTime: 0
   reappearTime: 0
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!61 &296788902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8601,7 +8601,7 @@ MonoBehaviour:
   disappearTime: 0
   reappearTime: 0
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!61 &346767976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9766,7 +9766,7 @@ MonoBehaviour:
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  objHide: 0
+  objHide: 1
   objShow: 0
 --- !u!61 &401762919
 BoxCollider2D:
@@ -15985,7 +15985,7 @@ MonoBehaviour:
   disappearTime: 0
   reappearTime: 0
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!61 &717018289
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19595,8 +19595,8 @@ MonoBehaviour:
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  objHide: 1
-  objShow: 0
+  objHide: 0
+  objShow: 1
 --- !u!61 &855730260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23159,7 +23159,7 @@ MonoBehaviour:
   disappearTime: 0
   reappearTime: 0
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!61 &1070215781
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31207,7 +31207,7 @@ MonoBehaviour:
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  objHide: 0
+  objHide: 1
   objShow: 0
 --- !u!61 &1469093247
 BoxCollider2D:
@@ -36587,7 +36587,7 @@ MonoBehaviour:
   disappearTime: 0
   reappearTime: 0
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!61 &1756875884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44781,7 +44781,7 @@ MonoBehaviour:
   disappearTime: 0
   reappearTime: 0
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!61 &2087689328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46911,7 +46911,7 @@ MonoBehaviour:
   chaseSpeed: 0
   waitTime: 1
   objHide: 0
-  objShow: 0
+  objShow: 1
 --- !u!114 &359634176764945637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47043,7 +47043,7 @@ MonoBehaviour:
   patrolSpeed: 2
   chaseSpeed: 0
   waitTime: 5
-  objHide: 0
+  objHide: 1
   objShow: 0
 --- !u!114 &359634177368167935
 MonoBehaviour:
