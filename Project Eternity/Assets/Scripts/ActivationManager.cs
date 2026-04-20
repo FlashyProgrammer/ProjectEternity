@@ -30,14 +30,14 @@ public class ActivationManager : MonoBehaviour
             if (activatePlatform != null)
             {
                 activatePlatform.enabled = false;
-                
+
             }
 
         }
     }
     private void Update()
     {
-        Debug.Log(isCompleted);
+
         if (currentKey != null)
         {
             if (currentKey == requiredKey)
@@ -45,12 +45,12 @@ public class ActivationManager : MonoBehaviour
                 currentKey.parent = null;
                 currentKey.transform.position = Vector2.MoveTowards(currentKey.transform.position, transform.position, keyAttachSpeed);
 
-                if (Vector2.Distance(currentKey.position,transform.position) < 0.01f)
+                if (Vector2.Distance(currentKey.position, transform.position) < 0.01f)
                 {
                     currentKey.gameObject.SetActive(false);
                     currentKey = null;
                 }
-                
+
                 if (activateEnemy != null && isCompleted)
                 {
                     activateEnemy.enabled = true;
@@ -84,8 +84,9 @@ public class ActivationManager : MonoBehaviour
                 if (currentKey == requiredKey)
                 {
                     playerConditions.DropSoul();
+                    playerConditions.DropSoul();
                     isCompleted = true;
-                    
+
                 }
             }
 
@@ -105,7 +106,7 @@ public class ActivationManager : MonoBehaviour
 
                     if (numberOfKeys + nextActivation.numberOfKeys == maxKeys)
                     {
-             
+                        playerConditions.DropSoul();
                         isCompleted = true;
                     }
 
@@ -114,5 +115,40 @@ public class ActivationManager : MonoBehaviour
         }
 
 
+
+
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        playerConditions = other.GetComponent<PlayerEffects>();
+        if (other.CompareTag("Player") && !isTwoPart)
+        {
+
+            if (currentKey == requiredKey)
+            {
+                playerConditions.DropSoul();
+                isCompleted = true;
+
+            }
+
+        }
+
+        if (other.CompareTag("Player") && isTwoPart)
+        {
+            currentKey = other.GetComponent<PlayerEffects>().followObject;
+
+            if (currentKey != null)
+            {
+                if (currentKey == requiredKey)
+                {
+                    if (numberOfKeys + nextActivation.numberOfKeys == maxKeys)
+                    {
+                        playerConditions.DropSoul();
+                        isCompleted = true;
+                    }
+
+                }
+            }
+        }
     }
 }

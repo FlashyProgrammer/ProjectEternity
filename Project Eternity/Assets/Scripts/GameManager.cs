@@ -15,13 +15,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject abilityWindow;
     [SerializeField] private Button optionButtonOne;
     [SerializeField] private Button optionButtonTwo;
+    [SerializeField] private Button abilityButtonOne;
+    [SerializeField] private Button abilityButtonTwo;
 
     [Header("Scene Management")]
-    [SerializeField] private Scene deathScene;
-    [SerializeField] private Scene menuScene;
-    [SerializeField] private Scene gameScene;
-    [SerializeField] private Scene startScene;
+    private Scene deathScene;
+    private Scene menuScene;
+    private Scene gameScene;
+    private Scene startScene;
 
+ 
     private PlayerController controller;
 
     private void Awake()
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+     
         if (!playerObject.activeInHierarchy)
         {
             StartCoroutine(EnableTime());  
@@ -37,16 +41,25 @@ public class GameManager : MonoBehaviour
 
         if (selectionWindow.activeInHierarchy)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 optionButtonOne.Select();
             }
 
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyUp(KeyCode.RightArrow))
             {
                 optionButtonTwo.Select();
             }
         }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            Debug.Log("Button pressed");
+            optionButtonOne.Select();
+            selectionWindow.SetActive(true);
+            abilityWindow.SetActive(false);
+        }
+ 
 
     }
 
