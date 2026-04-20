@@ -38,9 +38,12 @@ public class UiManager : MonoBehaviour
     }
     public void RestartButton()
     {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.UnloadSceneAsync("Interaction Window");
+        SceneManager.UnloadSceneAsync("Prototype");
         SceneManager.LoadScene("Interaction Window", LoadSceneMode.Additive);
         SceneManager.LoadScene("Prototype", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        
         Time.timeScale = 1f;
         isScreened = false;
 
@@ -53,28 +56,28 @@ public class UiManager : MonoBehaviour
 
     public void PlayButton()
     {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Interaction Window", LoadSceneMode.Additive);
         SceneManager.LoadScene("Prototype", LoadSceneMode.Additive);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         isScreened = false;
 
     }
 
     public void WinScreen()
     {
-        SceneManager.LoadScene("Win Screen", LoadSceneMode.Additive);
-        Time.timeScale = 0f;
         SceneManager.UnloadSceneAsync("Interaction Window");
         SceneManager.UnloadSceneAsync("Prototype");
+        SceneManager.LoadScene("Win Screen", LoadSceneMode.Additive);
+        Time.timeScale = 0f;
         isScreened = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void DeathScreen()
     {
-        SceneManager.LoadScene("Death Screen", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Interaction Window");
         SceneManager.UnloadSceneAsync("Prototype");
+        SceneManager.LoadScene("Death Screen", LoadSceneMode.Additive);
         Time.timeScale = 0f;
         isScreened = true;
         Cursor.lockState = CursorLockMode.None;
