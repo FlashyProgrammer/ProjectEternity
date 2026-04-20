@@ -52,5 +52,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: 1sky
+    uniqueID: 2035530989
+    locked: 0
+  - name: 2clouds
+    uniqueID: 2564313741
+    locked: 0
+  - name: 3clouds
+    uniqueID: 1231429621
+    locked: 0
+  - name: 4castle
+    uniqueID: 19233413
+    locked: 0
+  - name: 5mountains
+    uniqueID: 1100079713
+    locked: 0
+  - name: 6mountains
+    uniqueID: 1576177281
+    locked: 0
   m_RenderingLayers:
   - Default
