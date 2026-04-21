@@ -60,10 +60,14 @@ public class PlayerAbilities : MonoBehaviour
     public void Freeze()
     {
         abilityInt = 1;
-        audioManager.SetClipAbility(audioManager.timeStop);
-        audioManager.audioSourceAbilities.Play();
+   
         if (!abilityInUse && gameObject.activeInHierarchy && timeCounter < 0f)
         {
+            audioManager.SetClipAbilityFreeze(audioManager.timeStop);
+            if (abilityInt == 1)
+            {
+                audioManager.freezeAbility.Play();
+            }
             StartCoroutine(FreezeAbility());   
         }
 
@@ -156,7 +160,14 @@ public class PlayerAbilities : MonoBehaviour
         abilityInUse = true;
         sceneVolume.profile = sightVolume;
 
-        //
+        //audioManager.SetClipAbility(audioManager.timeStop);
+        if (abilityInt == 2)
+        {
+            audioManager.SetClipAbilitySight(audioManager.sightSound);
+            audioManager.SetTransition(audioManager.transitionSound);
+            audioManager.sightAbility.Play();
+            audioManager.transition.Play();
+        }
         EnemyAi[] enemyObjects = FindObjectsByType<EnemyAi>(FindObjectsSortMode.None);
         Platforms[] gamePlatforms = FindObjectsByType<Platforms>(FindObjectsSortMode.None);
         //
@@ -255,6 +266,12 @@ public class PlayerAbilities : MonoBehaviour
 
     private void EndSight()
     {
+        if(abilityInt == 2)
+        {
+            audioManager.transition.Play();
+            audioManager.sightAbility.Stop();
+
+        }
         sceneVolume.profile = normalVolume;
         abilityInUse = false;
         EnemyAi[] enemyObjects = FindObjectsByType<EnemyAi>(FindObjectsSortMode.None);
@@ -352,6 +369,7 @@ public class PlayerAbilities : MonoBehaviour
         EnemyAi[] enemyObjects = FindObjectsByType<EnemyAi>(FindObjectsSortMode.None);
         Platforms[] gamePlatforms = FindObjectsByType<Platforms>(FindObjectsSortMode.None);
 
+        audioManager.transition.Play();
         startTimer = true;
         canSight = true;
         animator.SetTrigger("unfreeze");

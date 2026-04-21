@@ -2,9 +2,18 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] public AudioSource audioSourceAbilities;
+    [Header("Abilities Source")]
+    [SerializeField] public AudioSource freezeAbility;
+    [SerializeField] public AudioSource sightAbility;
+    [SerializeField] public AudioSource transition;
     [SerializeField] public AudioSource audioSource;
+
+    [Header("Abilities Sound")]
     [SerializeField] public AudioClip timeStop;
+    [SerializeField] public AudioClip sightSound;
+    [SerializeField] public AudioClip transitionSound;
+
+    [Header("Player Sounds")]
     [SerializeField] public AudioClip walkSound;
 
     public void SetClip(AudioClip sound)
@@ -12,11 +21,25 @@ public class AudioManager : MonoBehaviour
        audioSource.clip = sound;
        return;
     }
-    public void SetClipAbility(AudioClip sound)
+    public void SetClipAbilityFreeze(AudioClip sound)
     {
-        audioSourceAbilities.clip = sound;
+        freezeAbility.clip = sound;
         return;
     }
+
+    public void SetClipAbilitySight(AudioClip sound)
+    {
+        sightAbility.clip = sound;
+        return;
+    }
+
+    public void SetTransition(AudioClip sound)
+    {
+        transition.clip = sound;
+        return;
+    }
+
+
 
 
 
