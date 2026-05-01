@@ -40,7 +40,7 @@ public class PlayerAbilities : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (Input.GetKeyUp(KeyCode.RightControl))
+        if (Input.GetKeyUp(KeyCode.RightControl) || Input.GetKeyUp(KeyCode.Keypad0))
         {
             switch (abilityInt)
             {
