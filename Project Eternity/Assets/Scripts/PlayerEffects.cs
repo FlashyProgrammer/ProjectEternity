@@ -40,7 +40,7 @@ public class PlayerEffects : MonoBehaviour
     private float originalDamping;
     private float originalAngularDaming;
     private float originalMass;
-    private Transform currentCheckPoint;
+    public Transform currentCheckPoint;
     private void Awake()
     {
         controller = GetComponent<PlayerController>();
@@ -99,13 +99,15 @@ public class PlayerEffects : MonoBehaviour
         // Check environment hazard (Spikes)
         if (collision.gameObject.CompareTag("Hazard"))
         {
-            transform.position = currentCheckPoint.position;
-            if (soulArea.gameObject.name == "Soul")
-            {
-                soulHealth.TakeDamage(generalDamage);
-            }
-
             Disable();
+            if (followObject != null)
+            {
+                if (followObject.gameObject.name == "Soul")
+                {
+                    soulHealth.TakeDamage(generalDamage);
+                }
+            }
+            
         }
 
         // Soul Collisions
@@ -138,23 +140,6 @@ public class PlayerEffects : MonoBehaviour
 
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Hazard"))
-        {
-            transform.position = currentCheckPoint.position;
-
-            if (followObject != null)
-            {
-                if (followObject.gameObject.name == "Soul")
-                {
-                    soulHealth.TakeDamage(generalDamage);
-                }
-            }
-            Disable();
-
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -166,8 +151,7 @@ public class PlayerEffects : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Hazard"))
         {
-            transform.position = currentCheckPoint.position;
-
+            Disable();
             if (followObject != null)
             {
                 if (followObject.gameObject.name == "Soul")
@@ -175,7 +159,7 @@ public class PlayerEffects : MonoBehaviour
                     soulHealth.TakeDamage(generalDamage);
                 }
             }
-            Disable();
+
         }
 
         if (collision.gameObject.CompareTag("Key") && isDropped)
@@ -211,6 +195,10 @@ public class PlayerEffects : MonoBehaviour
             rb.linearDamping = dampChange;
             rb.angularDamping = angularDampChange;
             rb.mass = massChange;
+        }
+        if (collision.CompareTag("Checkpoint"))
+        {
+            currentCheckPoint = collision.transform;
         }
     }
 

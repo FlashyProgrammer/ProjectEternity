@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     } 
     private void Awake()
     {
+        audioManager.SetClip(audioManager.walkSound);
         Cursor.lockState = CursorLockMode.Locked;
         originalGravity = GetComponent<Rigidbody2D>().gravityScale;
         originalScale = playerSprite.localScale;
@@ -74,23 +75,23 @@ public class PlayerController : MonoBehaviour
         Calculations();
         jumpBufferTimer -= Time.fixedDeltaTime;
 
-        if (isGrounded)
-        {
-            coyoteTimer = coyoteTime;
-            applyAirJump = false;
-            jumpCounter = 0;
-        }
-
-        else
-        {
-            coyoteTimer -= Time.fixedDeltaTime;
-        }
     }
 
     void PlayerMovement()
     {
         float xInput = Input.GetAxis("Horizontal") * playerSpeed;
+
         movement = Vector2.right * xInput;
+
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) && isGrounded)
+        {
+            audioManager.audioSource.gameObject.SetActive(true);
+        }
+
+        else
+        {
+            audioManager.audioSource.gameObject.SetActive(false);
+        }
 
     }
 

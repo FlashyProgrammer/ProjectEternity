@@ -1124,11 +1124,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &6913619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2714,11 +2716,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &22487946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6145,6 +6149,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &51297121
 BoxCollider2D:
@@ -8883,6 +8888,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &81161821
 BoxCollider2D:
@@ -11920,11 +11926,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &108569973
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15200,11 +15208,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &135554290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15497,11 +15507,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &137086760
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16211,11 +16223,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &143693594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17811,11 +17825,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &161142505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20298,11 +20314,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &182113171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21036,6 +21054,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &191323608
 BoxCollider2D:
@@ -21337,6 +21356,7 @@ MonoBehaviour:
   isLocked: 1
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &197135791
 BoxCollider2D:
@@ -21431,6 +21451,7 @@ MonoBehaviour:
   lineDistance: 0
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -21450,6 +21471,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!1 &201745168
 GameObject:
   m_ObjectHideFlags: 0
@@ -25022,13 +25045,15 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 1
   movePoints:
   - {fileID: 1997295004}
   - {fileID: 584821759}
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &231008991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25538,11 +25563,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &232886455
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26651,6 +26678,7 @@ MonoBehaviour:
   lineDistance: 1
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -26670,6 +26698,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &240480512
 Transform:
   m_ObjectHideFlags: 0
@@ -28851,11 +28881,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &261845475
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29148,11 +29180,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &267355203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31242,11 +31276,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &284552132
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40541,13 +40577,15 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 2
   movePoints:
   - {fileID: 1986608099}
   - {fileID: 1693436645}
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &372364958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42781,11 +42819,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &393829033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43352,6 +43392,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &395716934
 BoxCollider2D:
@@ -43446,6 +43487,7 @@ MonoBehaviour:
   lineDistance: 0
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -43465,6 +43507,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!1 &397104744
 GameObject:
   m_ObjectHideFlags: 0
@@ -44940,11 +44984,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &404765409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47891,11 +47937,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &427606973
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48916,11 +48964,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &440147952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49718,11 +49768,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 2
   reappearTime: 1
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &445301503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51657,6 +51709,7 @@ MonoBehaviour:
   isLocked: 1
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &458153508
 BoxCollider2D:
@@ -51751,6 +51804,7 @@ MonoBehaviour:
   lineDistance: 0
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -51770,6 +51824,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!1 &459688778
 GameObject:
   m_ObjectHideFlags: 0
@@ -59097,11 +59153,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &518527440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59532,11 +59590,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &526387057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61761,13 +61821,15 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 2
   movePoints:
   - {fileID: 102038515}
   - {fileID: 71783433}
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &537410525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61863,11 +61925,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &538291041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63254,11 +63318,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &552352499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64091,6 +64157,7 @@ MonoBehaviour:
   lineDistance: 1
   isLineDetection: 1
   isCircleDetection: 0
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -64110,6 +64177,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &555937399
 Transform:
   m_ObjectHideFlags: 0
@@ -65382,11 +65451,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &571685010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71818,11 +71889,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &631091233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -72344,11 +72417,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &633681778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75708,6 +75783,7 @@ MonoBehaviour:
   isLocked: 1
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!1 &654036996
 GameObject:
@@ -76639,11 +76715,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &665778165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -78371,11 +78449,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &684279454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81703,6 +81783,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!1 &716527273
 GameObject:
@@ -84858,11 +84939,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &757326779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88648,13 +88731,15 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 2
   movePoints:
   - {fileID: 1066729157}
   - {fileID: 1025795351}
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &774661181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -90466,11 +90551,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &795291882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -91029,11 +91116,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &800576921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -91424,11 +91513,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &804735853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -95658,11 +95749,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &843125254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -98938,11 +99031,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &872265185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -99097,11 +99192,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &872726385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -100320,11 +100417,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &881195901
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -101947,11 +102046,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &888837223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107857,6 +107958,7 @@ MonoBehaviour:
   lineDistance: 1
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -107876,6 +107978,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &947712633
 Transform:
   m_ObjectHideFlags: 0
@@ -107942,11 +108046,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &947791063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109333,11 +109439,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &956134437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109768,11 +109876,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &957481664
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110341,11 +110451,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &959284537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110638,11 +110750,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &961145644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112848,11 +112962,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &973174777
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113219,11 +113335,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &976126756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -114931,11 +115049,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &986355721
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -115949,11 +116069,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1000749483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119502,11 +119624,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1029841932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122371,13 +122495,15 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 2
   movePoints:
   - {fileID: 1538107471}
   - {fileID: 1704211629}
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1053718467
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124113,11 +124239,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1076099167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125198,11 +125326,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1082827311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126725,11 +126855,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1086475459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127712,11 +127844,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1096124431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131965,11 +132099,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1137379644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133372,6 +133508,7 @@ MonoBehaviour:
   lineDistance: 1
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -133391,6 +133528,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &1147797056
 Transform:
   m_ObjectHideFlags: 0
@@ -136639,6 +136778,7 @@ MonoBehaviour:
   isLocked: 1
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &1171030992
 BoxCollider2D:
@@ -136733,6 +136873,7 @@ MonoBehaviour:
   lineDistance: 0
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -136752,6 +136893,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!1 &1171596460
 GameObject:
   m_ObjectHideFlags: 0
@@ -137215,11 +137358,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1176344700
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139543,11 +139688,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1197633163
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140214,11 +140361,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1202184114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140511,11 +140660,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1203114578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141320,11 +141471,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1207451751
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142335,6 +142488,7 @@ MonoBehaviour:
   isLocked: 1
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &1221359212
 BoxCollider2D:
@@ -142429,6 +142583,7 @@ MonoBehaviour:
   lineDistance: 0
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -142448,6 +142603,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &1221359215
 Transform:
   m_ObjectHideFlags: 0
@@ -142514,11 +142671,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1222467156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142918,11 +143077,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1227900291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147866,11 +148027,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1263706645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148595,11 +148758,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1268663863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152675,11 +152840,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1307512756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154981,11 +155148,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1330776558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158204,6 +158373,7 @@ MonoBehaviour:
   lineDistance: 1
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -158223,6 +158393,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &1371281193
 Transform:
   m_ObjectHideFlags: 0
@@ -162625,11 +162797,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1418332531
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164904,6 +165078,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 1
   maxKeys: 2
+  playerConditions: {fileID: 0}
   numberOfKeys: 1
 --- !u!1 &1432188968
 GameObject:
@@ -169000,7 +169175,7 @@ Transform:
   m_GameObject: {fileID: 1464176152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -109.31, y: -36.41, z: 0}
+  m_LocalPosition: {x: 26.9, y: -247, z: 0}
   m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -169883,11 +170058,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1470953431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170908,6 +171085,7 @@ MonoBehaviour:
   lineDistance: 1
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -170927,6 +171105,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &1480164398
 Transform:
   m_ObjectHideFlags: 0
@@ -173874,11 +174054,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1514868710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174437,13 +174619,15 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 2
   movePoints:
   - {fileID: 170432141}
   - {fileID: 2076140258}
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1516183861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179216,11 +179400,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1566111214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181561,11 +181747,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1579078240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182400,11 +182588,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1585894513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182559,11 +182749,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1585938938
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184196,11 +184388,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1598802181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186237,11 +186431,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1616027946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186396,11 +186592,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1616183832
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188171,11 +188369,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1630476945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188882,11 +189082,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1633696769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193956,11 +194158,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1680123026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194115,11 +194319,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1680853369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196223,11 +196429,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1694965026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197033,6 +197241,7 @@ MonoBehaviour:
     m_Bits: 64
   circleRadius: 0.08
   playerSprite: {fileID: 1698876939}
+  animator: {fileID: 0}
   playerSpeed: 10
   dashSpeed: 8
   jumpForce: 3.5
@@ -197046,6 +197255,7 @@ MonoBehaviour:
   canFloat: 1
   canDash: 0
   jumpAddition: 1
+  audioManager: {fileID: 0}
 --- !u!50 &1698876937
 Rigidbody2D:
   serializedVersion: 5
@@ -197143,11 +197353,16 @@ MonoBehaviour:
   dampChange: 0.5
   angularDampChange: 0.5
   bounceForce: 4
-  soulArea: {fileID: 1918513479}
-  controllerDisableTime: 0.5
   soulHealth: {fileID: 0}
+  generalDamage: 0
+  gradualDamage: 0
+  gradualDecreaseTime: 0
+  controllerDisableTime: 0.5
+  soulArea: {fileID: 1918513479}
+  uiManager: {fileID: 0}
   followObject: {fileID: 0}
   isDropped: 0
+  currentCheckPoint: {fileID: 0}
 --- !u!1 &1700817595
 GameObject:
   m_ObjectHideFlags: 0
@@ -197692,10 +197907,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CheckpointManager
   playerObject: {fileID: 1698876935}
   controllerDisableTime: 2
+  ability: {fileID: 0}
   selectionWindow: {fileID: 0}
   abilityWindow: {fileID: 0}
   optionButtonOne: {fileID: 0}
   optionButtonTwo: {fileID: 0}
+  abilityButtonOne: {fileID: 0}
+  abilityButtonTwo: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!4 &1707790620
 Transform:
   m_ObjectHideFlags: 0
@@ -198586,11 +198805,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1714211821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201551,11 +201772,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1738303612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -203368,11 +203591,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1753174071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204584,11 +204809,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1765768686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207735,11 +207962,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1789299051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210566,11 +210795,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1812048683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -212243,11 +212474,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1825651469
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -212402,13 +212635,15 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 1
   movePoints:
   - {fileID: 1382233178}
   - {fileID: 2134620552}
   disappearTime: 1
   reappearTime: 3
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1826242385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -212504,11 +212739,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1827660750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -212801,11 +213038,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1829871036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214576,11 +214815,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1841880171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217248,11 +217489,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1858229731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217426,11 +217669,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1861681006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217723,11 +217968,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1863124189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219724,6 +219971,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 1
   maxKeys: 2
+  playerConditions: {fileID: 0}
   numberOfKeys: 1
 --- !u!1 &1877596805
 GameObject:
@@ -221743,11 +221991,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1888993273
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -223182,11 +223432,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1900334717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -223745,11 +223997,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1904595727
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -224180,11 +224434,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1906339164
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -224437,11 +224693,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1907799055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228279,11 +228537,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1938012798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228867,11 +229127,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1941534267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -229760,11 +230022,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1947601146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -232328,6 +232592,7 @@ MonoBehaviour:
   isLocked: 0
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &1967801063
 BoxCollider2D:
@@ -232998,11 +233263,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1969623867
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -234312,11 +234579,13 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 0
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 0
   movePoints: []
   disappearTime: 1
   reappearTime: 2
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1978955431
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -234825,11 +235094,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &1985032346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -236464,11 +236735,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2005333518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240181,11 +240454,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2026869096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240754,11 +241029,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2029086371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240913,11 +241190,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2031365437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241624,11 +241903,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2043385673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246365,11 +246646,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2074305545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246831,11 +247114,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2076715158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250085,11 +250370,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2103621629
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -253914,11 +254201,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2132731376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255522,11 +255811,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2145885279
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255681,11 +255972,13 @@ MonoBehaviour:
   isFragile: 0
   isMoving: 0
   isStatic: 1
+  isToBeActivated: 0
   platformSpeed: 0.1
   movePoints: []
   disappearTime: 0
   reappearTime: 0
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!61 &2146005178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -256207,6 +256500,7 @@ MonoBehaviour:
   lineDistance: 0
   isLineDetection: 0
   isCircleDetection: 1
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -256226,6 +256520,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!1 &1548499220495117636
 GameObject:
   m_ObjectHideFlags: 0
@@ -256821,6 +257117,7 @@ MonoBehaviour:
   lineDistance: 2
   isLineDetection: 1
   isCircleDetection: 0
+  toBeActivated: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -256840,6 +257137,8 @@ MonoBehaviour:
   patrolSpeed: 0
   chaseSpeed: 0
   waitTime: 0
+  objHide: 0
+  objShow: 0
 --- !u!4 &5056267200414088606
 Transform:
   m_ObjectHideFlags: 0
@@ -256877,6 +257176,7 @@ MonoBehaviour:
   isLocked: 1
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!61 &5284820760202786514
 BoxCollider2D:
@@ -257089,13 +257389,15 @@ MonoBehaviour:
   isFragile: 1
   isMoving: 1
   isStatic: 0
+  isToBeActivated: 0
   platformSpeed: 2
   movePoints:
   - {fileID: 3533211931605044212}
   - {fileID: 8115329100522280403}
   disappearTime: 0.1
   reappearTime: 100
-  scene: {}
+  objHide: 0
+  objShow: 0
 --- !u!4 &6712234801847950479
 Transform:
   m_ObjectHideFlags: 0
@@ -257294,6 +257596,7 @@ MonoBehaviour:
   isLocked: 1
   isTwoPart: 0
   maxKeys: 0
+  playerConditions: {fileID: 0}
   numberOfKeys: 0
 --- !u!1 &8497533800672913953
 GameObject:
