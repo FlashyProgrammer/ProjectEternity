@@ -1,43 +1,31 @@
 fileFormatVersion: 2
-guid: 7fc5339daba822141b20ac674c4ce135
+guid: 42cea7cf1efad0f4c9c68592e80c0caf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8971354143331986916
-    second: PsychopompRun_0
+      213: 2766949442615570457
+    second: PsychopompIdle_0
   - first:
-      213: -665856816930931945
-    second: PsychopompRun_1
+      213: -3943624029766723694
+    second: PsychopompIdle_1
   - first:
-      213: 8821010846963264579
-    second: PsychopompRun_2
+      213: 2783676483398174952
+    second: PsychopompIdle_2
   - first:
-      213: 268754888442756809
-    second: PsychopompRun_3
+      213: -583363172012847550
+    second: PsychopompIdle_3
   - first:
-      213: -8203932629584748790
-    second: PsychopompRun_4
+      213: -4196584376484905092
+    second: PsychopompIdle_4
   - first:
-      213: -2335867312431436507
-    second: PsychopompRun_5
+      213: 8777965429532786280
+    second: PsychopompIdle_5
   - first:
-      213: -2752078613740965735
-    second: PsychopompRun_6
+      213: 4144085151972922958
+    second: PsychopompIdle_6
   - first:
-      213: 4719332158180739433
-    second: PsychopompRun_7
-  - first:
-      213: -6635024008760924505
-    second: PsychopompRun_8
-  - first:
-      213: 917694831135603550
-    second: PsychopompRun_9
-  - first:
-      213: 3636206166452095479
-    second: PsychopompRun_10
-  - first:
-      213: 4908731915063492139
-    second: PsychopompRun_11
+      213: -3404558219670405812
+    second: PsychopompIdle_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 480
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,11 +117,63 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PsychopompRun_0
+      name: PsychopompIdle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -148,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c12d77c50f85f7380800000000000000
-      internalID: -8971354143331986916
+      spriteID: 910f09eabdd266620800000000000000
+      internalID: 2766949442615570457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PsychopompRun_1
+      name: PsychopompIdle_1
       rect:
         serializedVersion: 2
         x: 320
@@ -170,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71b3f8bb0c662c6f0800000000000000
-      internalID: -665856816930931945
+      spriteID: 2975f02d6de6549c0800000000000000
+      internalID: -3943624029766723694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PsychopompRun_2
+      name: PsychopompIdle_2
       rect:
         serializedVersion: 2
         x: 640
@@ -192,14 +232,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34cec1d21a68a6a70800000000000000
-      internalID: 8821010846963264579
+      spriteID: 8e88e8a530b91a620800000000000000
+      internalID: 2783676483398174952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PsychopompRun_3
+      name: PsychopompIdle_3
       rect:
         serializedVersion: 2
         x: 960
@@ -214,14 +254,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ceb749a52fcab300800000000000000
-      internalID: 268754888442756809
+      spriteID: 24e012d294a77e7f0800000000000000
+      internalID: -583363172012847550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PsychopompRun_4
+      name: PsychopompIdle_4
       rect:
         serializedVersion: 2
         x: 1280
@@ -236,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0f5d5c5db6c52e80800000000000000
-      internalID: -8203932629584748790
+      spriteID: c7fb9a97ebcb2c5c0800000000000000
+      internalID: -4196584376484905092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PsychopompRun_5
+      name: PsychopompIdle_5
       rect:
         serializedVersion: 2
         x: 1600
@@ -258,14 +298,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 52de3182e05559fd0800000000000000
-      internalID: -2335867312431436507
+      spriteID: 86ef5fdec0991d970800000000000000
+      internalID: 8777965429532786280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PsychopompRun_6
+      name: PsychopompIdle_6
       rect:
         serializedVersion: 2
         x: 1920
@@ -280,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 990350af417aec9d0800000000000000
-      internalID: -2752078613740965735
+      spriteID: e46115a4d7fb28930800000000000000
+      internalID: 4144085151972922958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PsychopompRun_7
+      name: PsychopompIdle_7
       rect:
         serializedVersion: 2
         x: 2240
@@ -302,96 +342,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 969c071089f6e7140800000000000000
-      internalID: 4719332158180739433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PsychopompRun_8
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 320
-        height: 320
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a6ed9161d8abe3a0800000000000000
-      internalID: -6635024008760924505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PsychopompRun_9
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 320
-        height: 320
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e5bbc06369e4cbc00800000000000000
-      internalID: 917694831135603550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PsychopompRun_10
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 320
-        height: 320
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7f946713e36667230800000000000000
-      internalID: 3636206166452095479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PsychopompRun_11
-      rect:
-        serializedVersion: 2
-        x: 3520
-        y: 0
-        width: 320
-        height: 320
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b2e7bfe4ba15f1440800000000000000
-      internalID: 4908731915063492139
+      spriteID: c4db86b565490c0d0800000000000000
+      internalID: -3404558219670405812
       vertices: []
       indices: 
       edges: []
@@ -400,7 +352,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c7843af89849e674e80020e520daa445
+    spriteID: f1470346e595925489e9ebdae5b4bc78
     internalID: 0
     vertices: []
     indices: 
@@ -412,18 +364,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":320.0,"y":320.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      PsychopompRun_0: -8971354143331986916
-      PsychopompRun_1: -665856816930931945
-      PsychopompRun_10: 3636206166452095479
-      PsychopompRun_11: 4908731915063492139
-      PsychopompRun_2: 8821010846963264579
-      PsychopompRun_3: 268754888442756809
-      PsychopompRun_4: -8203932629584748790
-      PsychopompRun_5: -2335867312431436507
-      PsychopompRun_6: -2752078613740965735
-      PsychopompRun_7: 4719332158180739433
-      PsychopompRun_8: -6635024008760924505
-      PsychopompRun_9: 917694831135603550
+      PsychopompIdle_0: 2766949442615570457
+      PsychopompIdle_1: -3943624029766723694
+      PsychopompIdle_2: 2783676483398174952
+      PsychopompIdle_3: -583363172012847550
+      PsychopompIdle_4: -4196584376484905092
+      PsychopompIdle_5: 8777965429532786280
+      PsychopompIdle_6: 4144085151972922958
+      PsychopompIdle_7: -3404558219670405812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
