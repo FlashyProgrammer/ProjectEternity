@@ -13374,7 +13374,7 @@ MonoBehaviour:
   timeStop: {fileID: 8300000, guid: 1f28ea38424a02646ab6c2428c9ba18f, type: 3}
   sightSound: {fileID: 8300000, guid: a1257360bdd31de4f8273ca3b2159337, type: 3}
   transitionSound: {fileID: 8300000, guid: 1075aba7e3793e845b2731e27c6512c1, type: 3}
-  walkSound: {fileID: 8300000, guid: eedca39abe9e74a41a66db32b9743df7, type: 3}
+  walkSound: {fileID: 8300000, guid: 016269c63c8aa4d4c8cbb677be2ec440, type: 3}
 --- !u!4 &1826419635
 Transform:
   m_ObjectHideFlags: 0
