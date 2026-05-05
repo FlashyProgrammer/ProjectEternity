@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMovement()
     {
-        float xInput = Input.GetAxis("Horizontal") * playerSpeed;
+        float xInput = Input.GetAxisRaw("Horizontal") * playerSpeed;
 
         movement = Vector2.right * xInput;
 
@@ -91,6 +91,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             audioManager.audioSource.gameObject.SetActive(false);
+        }
+
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocityY);
         }
 
     }
