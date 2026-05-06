@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 
 public class Platforms : MonoBehaviour
@@ -27,18 +28,18 @@ public class Platforms : MonoBehaviour
 
     private Transform currentPoint;
     private int index = 0;
-    private SpriteRenderer platformRenderer;
+    private TilemapRenderer platformRenderer;
     private Collider2D platformCollider;
 
     private void Awake()
     {
       
         platformCollider = GetComponent<Collider2D>();
-        platformRenderer = GetComponent<SpriteRenderer>();
+        platformRenderer = GetComponent<TilemapRenderer>();
 
         if (platformRenderer == null)
         {
-            platformRenderer = GetComponentInChildren<SpriteRenderer>();
+            platformRenderer = GetComponentInChildren<TilemapRenderer>();
         }
 
         if (platformCollider == null)
@@ -64,9 +65,9 @@ public class Platforms : MonoBehaviour
                 GetComponent<Collider2D>().enabled = false;
             }
 
-            if (gameObject.GetComponentInChildren<SpriteRenderer>() != null)
+            if (gameObject.GetComponentInChildren<TilemapRenderer>() != null)
             {
-                gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                gameObject.GetComponentInChildren<TilemapRenderer>().enabled = false;
             }
         }
     }
