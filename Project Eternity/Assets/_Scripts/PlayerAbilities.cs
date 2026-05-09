@@ -41,20 +41,30 @@ public class PlayerAbilities : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (Input.GetKeyUp(KeyCode.RightControl) || Input.GetKeyUp(KeyCode.Keypad0))
-        {
-            switch (abilityInt)
-            {
-                case 0:
-                    break;
-                case 1:
-                    Freeze();
-                    break;
-                case 2:
-                    Sight();
-                    break;
+        //if (Input.GetKeyUp(KeyCode.RightControl) || Input.GetKeyUp(KeyCode.Keypad0))
+        //{
+        //    switch (abilityInt)
+        //    {
+        //        case 0:
+        //            break;
+        //        case 1:
+        //            Freeze();
+        //            break;
+        //        case 2:
+        //            Sight();
+        //            break;
 
-            }
+        //    }
+        //}
+
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            Freeze();
+        }
+
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            Sight();
         }
     }
 
