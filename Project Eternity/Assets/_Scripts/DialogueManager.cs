@@ -12,7 +12,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float flashTime;
     [SerializeField] private float textSpeed;
     [SerializeField] private float textTime;
-    [SerializeField] private Image portraitPos; 
+    [SerializeField] private Image portraitPos;
+
+    [Header("Animations")]
+    [SerializeField] private Animator portraitAnim;
+    [SerializeField] private Animator gameViewAnim;
     private Queue<string> lineList;
     
     void Awake()
@@ -23,6 +27,8 @@ public class DialogueManager : MonoBehaviour
     public void BeginDialogue(Character character)
     {
         lineList.Clear();
+        portraitAnim.SetTrigger("Grow");
+        gameViewAnim.SetTrigger("Shrink");
         portraitPos.sprite = character.characterSprite;
         foreach (string line in character.lines) 
         {
@@ -62,6 +68,8 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         dialogueText.text = "";
+        portraitAnim.SetTrigger("Shrink");
+        gameViewAnim.SetTrigger("Grow");
     }
 
     IEnumerator Flash()

@@ -4275,6 +4275,8 @@ MonoBehaviour:
   textSpeed: 0.03
   textTime: 6
   portraitPos: {fileID: 1655413793}
+  portraitAnim: {fileID: 1655413795}
+  gameViewAnim: {fileID: 1285699500}
 --- !u!4 &1090744625
 Transform:
   m_ObjectHideFlags: 0
@@ -10335,6 +10337,7 @@ GameObject:
   - component: {fileID: 1285699497}
   - component: {fileID: 1285699499}
   - component: {fileID: 1285699498}
+  - component: {fileID: 1285699500}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -10396,6 +10399,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285699496}
   m_CullTransparentMesh: 1
+--- !u!95 &1285699500
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285699496}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d88e94601babb74495eca53a381fbc8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1314452404
 GameObject:
   m_ObjectHideFlags: 0
@@ -12115,6 +12140,7 @@ GameObject:
   - component: {fileID: 1655413792}
   - component: {fileID: 1655413794}
   - component: {fileID: 1655413793}
+  - component: {fileID: 1655413795}
   m_Layer: 5
   m_Name: Character Portrait
   m_TagString: Untagged
@@ -12131,14 +12157,14 @@ RectTransform:
   m_GameObject: {fileID: 1655413791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1509917220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -44, y: 391}
+  m_AnchoredPosition: {x: -44, y: 364}
   m_SizeDelta: {x: 380, y: 370}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655413793
@@ -12179,6 +12205,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655413791}
   m_CullTransparentMesh: 1
+--- !u!95 &1655413795
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655413791}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e419e523cb2a0642a03cb51d5e8d696, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1698876935
 GameObject:
   m_ObjectHideFlags: 0
@@ -12218,7 +12266,7 @@ MonoBehaviour:
   circleRadius: 0.08
   playerSprite: {fileID: 1698876939}
   animator: {fileID: 654983294}
-  playerSpeed: 10
+  playerSpeed: 6
   dashSpeed: 8
   jumpForce: 4
   doubleJumpForce: 2.5
