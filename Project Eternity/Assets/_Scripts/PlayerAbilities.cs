@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.Rendering;
 
 public class PlayerAbilities : MonoBehaviour
@@ -241,6 +242,10 @@ public class PlayerAbilities : MonoBehaviour
                     platform.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
                 }
 
+                if (platform.gameObject.GetComponent<Tilemap>() != null)
+                {
+                    platform.gameObject.GetComponent<Tilemap>().enabled = true;
+                }
             }
 
             if (platform.objShow)
@@ -257,6 +262,15 @@ public class PlayerAbilities : MonoBehaviour
                     var platformColour = platform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
                     platformColour.a = 0.1f;
                     platform.gameObject.GetComponentInChildren<SpriteRenderer>().color = platformColour;
+
+
+                }
+
+                if (platform.gameObject.GetComponent<Tilemap>() != null)
+                {
+                    var platformColour = platform.gameObject.GetComponent<Tilemap>().color;
+                    platformColour.a = 0.1f;
+                    platform.gameObject.GetComponent<Tilemap>().color = platformColour;
 
 
                 }
@@ -315,7 +329,7 @@ public class PlayerAbilities : MonoBehaviour
                 {
                     var enemyColour = enemy.gameObject.GetComponentInChildren<SpriteRenderer>().color;
                     enemyColour.a = 1f;
-                    enemy.gameObject.GetComponentInChildren<SpriteRenderer>().color = enemyColour;
+                    enemy.gameObject.GetComponentInChildren<Tilemap>().color = enemyColour;
                 }
             }
         }
@@ -334,6 +348,12 @@ public class PlayerAbilities : MonoBehaviour
                 if (platform.gameObject.GetComponentInChildren<SpriteRenderer>() != null)
                 {
                     platform.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                }
+
+
+                if (platform.gameObject.GetComponent<Tilemap>() != null)
+                {
+                    platform.gameObject.GetComponent<Tilemap>().enabled = false;
                 }
             }
 
@@ -355,6 +375,13 @@ public class PlayerAbilities : MonoBehaviour
                     var platformColour = platform.gameObject.GetComponentInChildren<SpriteRenderer>().color;
                     platformColour.a = 1f;
                     platform.gameObject.GetComponentInChildren<SpriteRenderer>().color = platformColour;
+                }
+
+                if (platform.gameObject.GetComponent<Tilemap>() != null)
+                {
+                    var platformColour = platform.gameObject.GetComponent<Tilemap>().color;
+                    platformColour.a = 1f;
+                    platform.gameObject.GetComponent<Tilemap>().color = platformColour;
                 }
             }
         }
