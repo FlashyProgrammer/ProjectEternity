@@ -18,7 +18,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Animator portraitAnim;
     [SerializeField] private Animator gameViewAnim;
     private Queue<string> lineList;
-    
+
+    public bool dialogueStarted;    
+
     void Awake()
     {
         lineList = new Queue<string>();
@@ -26,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     public void BeginDialogue(Character character)
     {
+        dialogueStarted = true;
         lineList.Clear();
         portraitAnim.SetTrigger("Grow");
         gameViewAnim.SetTrigger("Shrink");
@@ -68,6 +71,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         dialogueText.text = "";
+        dialogueStarted = false;
         portraitAnim.SetTrigger("Shrink");
         gameViewAnim.SetTrigger("Grow");
     }

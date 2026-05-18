@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using Unity.VectorGraphics;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -13,12 +12,22 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject selectionWindow;
+    [SerializeField] private GameObject selectionWindowBig;
     [SerializeField] private GameObject abilityWindow;
     [SerializeField] private Button optionButtonOne;
     [SerializeField] private Button optionButtonTwo;
+    [SerializeField] private Button optionButtonOneBig;
+    [SerializeField] private Button optionButtonTwoBig;
     [SerializeField] private Button abilityButtonOne;
     [SerializeField] private Button abilityButtonTwo;
     [SerializeField] private GameObject pauseMenu;
+
+    [Header("Animations")]
+    [SerializeField] private Animator portaritCharacter;
+    [SerializeField] private Animator gameViewWindow;
+
+    [Header("Dialogue")]
+    [SerializeField] private DialogueManager dialogueManager;
 
 
     private int pauseCounter;
@@ -36,27 +45,72 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EnableTime());  
         }
 
+        if (selectionWindowBig.activeInHierarchy)
+        {
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                optionButtonOneBig.Select();
+            }
+
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                optionButtonTwoBig.Select();
+            }
+
+
+            gameViewWindow.Play("Small");
+
+        }
+
+
         if (selectionWindow.activeInHierarchy)
         {
             if (Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 optionButtonOne.Select();
+                selectionWindowBig.SetActive(true);
+                selectionWindow.SetActive(false);
+                gameViewWindow.SetTrigger("Shrink");
             }
 
             if (Input.GetKeyUp(KeyCode.RightArrow))
             {
                 optionButtonTwo.Select();
+                selectionWindowBig.SetActive(true);
+                selectionWindow.SetActive(false);
+                gameViewWindow.SetTrigger("Shrink");
+            }
+
+            if (Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                optionButtonOne.Select();
+                selectionWindowBig.SetActive(true);
+                selectionWindow.SetActive(false);
+                gameViewWindow.SetTrigger("Shrink");
+            }
+
+            if (Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                optionButtonTwo.Select();
+                selectionWindowBig.SetActive(true);
+                selectionWindow.SetActive(false);
+                gameViewWindow.SetTrigger("Shrink");
             }
         }
 
-
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Backspace))
         {
             Debug.Log("Button pressed");
             optionButtonOne.Select();
             selectionWindow.SetActive(true);
+            selectionWindowBig.SetActive(false);
             abilityWindow.SetActive(false);
-            
+
+            if (!selectionWindowBig.activeInHierarchy && !dialogueManager.dialogueStarted)
+            {
+                gameViewWindow.SetTrigger("Grow");
+            }
+          
         }
 
         if(SceneManager.GetSceneByName("Death Screen").isLoaded)
@@ -65,25 +119,27 @@ public class GameManager : MonoBehaviour
             playerObject.transform.position = playerObject.GetComponent<PlayerEffects>().currentCheckPoint.position;
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape) && pauseCounter == 0)
-        {
-            pauseCounter++;
-            Cursor.lockState = CursorLockMode.None;
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
-        }
+ 
 
-        if (Input.GetKeyDown(KeyCode.Escape) && pauseCounter == 1)
+        if ((Input.GetKeyUp(KeyCode.Escape)))
         {
-            pauseCounter++;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Escape) && pauseCounter == 2)
-        {
-            pauseMenu.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            pauseCounter = 0;
-            Time.timeScale = 1f;
+            switch(pauseCounter)
+            {   case 0:
+                    pauseCounter++;
+                    Cursor.lockState = CursorLockMode.None;
+                    pauseMenu.SetActive(true);
+                    Time.timeScale = 0f;
+                    break;
+                case 1:
+                    pauseCounter++;
+                    break;
+                case 2:
+                    pauseMenu.SetActive(false);
+                    Cursor.lockState = CursorLockMode.Locked;
+                    pauseCounter = 0;
+                    Time.timeScale = 1f;
+                    break;
+            }
         }
 
     }
