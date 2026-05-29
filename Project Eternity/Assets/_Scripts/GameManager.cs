@@ -71,12 +71,12 @@ public class GameManager : MonoBehaviour
         if (abilityWindow.activeInHierarchy)
         {
 
-            if (Input.GetKeyUp(KeyCode.UpArrow))
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 abilityButtonOne.Select();
             }
 
-            if (Input.GetKeyUp(KeyCode.DownArrow))
+            if (Input.GetKeyUp(KeyCode.RightArrow))
             {
                 abilityButtonOne.Select();
             }

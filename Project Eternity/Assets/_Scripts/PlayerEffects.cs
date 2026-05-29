@@ -37,8 +37,6 @@ public class PlayerEffects : MonoBehaviour
 
 
     private bool startCounter = true;
-    private Vector3 soulAreaScale;
-    private Vector3 currentObjectScale;
     private float timeCounter;
     private PlayerController controller;
     private float originalDamping;
@@ -49,7 +47,6 @@ public class PlayerEffects : MonoBehaviour
     {
         controller = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
-        soulAreaScale = soulArea.localScale;
     }
 
     private void Start()
@@ -61,14 +58,6 @@ public class PlayerEffects : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        if (followObject != null)
-        {
-            flipSprite();
-        }
-
-    }
     private void FixedUpdate()
     {
        
@@ -127,9 +116,21 @@ public class PlayerEffects : MonoBehaviour
         // Soul Collisions
         if (collision.gameObject.CompareTag("Key") && isDropped)
         {
-            followObject = collision.transform;
-            currentObjectScale = followObject.localScale;
+          
+            followObject = collision.transform;    
             followObject.parent = soulArea;
+
+            if (transform.localScale.x < 0f)
+            {
+                followObject.localScale = new Vector3(-followObject.localScale.x, followObject.localScale.y, followObject.localScale.z);
+
+            }
+
+            if (transform.localScale.x > 0f)
+            {
+                followObject.localScale = new Vector3(Mathf.Abs(followObject.localScale.x), followObject.localScale.y, followObject.localScale.z);
+            }
+
             followObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
             followObject.gameObject.GetComponent<Collider2D>().isTrigger = true;
             isDropped = false;
@@ -180,7 +181,6 @@ public class PlayerEffects : MonoBehaviour
         if (collision.gameObject.CompareTag("Key") && isDropped)
         {
             followObject = collision.transform;
-            currentObjectScale = followObject.localScale;
             followObject.parent = soulArea;
             followObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
             followObject.gameObject.GetComponent<Collider2D>().isTrigger = true;
@@ -234,28 +234,6 @@ public class PlayerEffects : MonoBehaviour
         transform.position = currentCheckPoint.position;
         gameObject.SetActive(false);
         controller.enabled = false;
-
-    }
-
-    void flipSprite()
-    {
-        float xInput = Input.GetAxis("Horizontal");
-
-        if (xInput > 0)
-        {
-            var xFlip = soulAreaScale.x;
-            soulArea.localScale = new Vector3(xFlip, soulAreaScale.y, soulAreaScale.z);
-            var xFlipObj = currentObjectScale.x;
-            followObject.localScale = new Vector3(xFlipObj, followObject.localScale.y, followObject.localScale.z);
-        }
-
-        if (xInput < 0)
-        {
-            var xFlip = soulAreaScale.x * -1;
-            soulArea.localScale = new Vector3(xFlip, soulAreaScale.y, soulAreaScale.z);
-            var xFlipObj = currentObjectScale.x * -1;
-            followObject.localScale = new Vector3(xFlipObj, followObject.localScale.y, followObject.localScale.z);
-        }
 
     }
  
