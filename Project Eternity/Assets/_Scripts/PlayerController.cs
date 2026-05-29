@@ -1,4 +1,3 @@
-using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,10 +59,14 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        PlayerMovement();
-        PlayerJump();
-        PlayerDash();
-        flipSprite();
+        if (Time.timeScale != 0f)
+        {
+            PlayerMovement();
+            PlayerJump();
+            PlayerDash();
+            flipSprite();
+        }
+       
 
         animator.SetFloat("yVelocity", rb.linearVelocity.y);
         animator.SetFloat("magnitude", rb.linearVelocity.magnitude);
@@ -86,6 +89,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) && isGrounded)
         {
             audioManager.audioSource.gameObject.SetActive(true);
+
+            if (audioManager.audioSource.gameObject.activeInHierarchy)
+            {
+                audioManager.audioSource.pitch = Random.Range(0.5f, 1f);
+            }
         }
 
         else

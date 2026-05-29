@@ -15,7 +15,7 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private Animator animator;
 
     [Header("Post-Processing")]
-    [SerializeField] private Volume sceneVolume; 
+    [SerializeField] private Volume sceneVolume;
     [SerializeField] private VolumeProfile normalVolume;
     [SerializeField] private VolumeProfile freezeVolume;
     [SerializeField] private VolumeProfile sightVolume;
@@ -28,6 +28,7 @@ public class PlayerAbilities : MonoBehaviour
     private bool canSight = true;
     private int sightCounter = 0;
 
+
     private void Update()
     {
         if (startTimer)
@@ -35,43 +36,13 @@ public class PlayerAbilities : MonoBehaviour
             timeCounter -= Time.deltaTime;
         }
 
-
-        PlayerInput();
     }
 
-    private void PlayerInput()
-    {
-        //if (Input.GetKeyUp(KeyCode.RightControl) || Input.GetKeyUp(KeyCode.Keypad0))
-        //{
-        //    switch (abilityInt)
-        //    {
-        //        case 0:
-        //            break;
-        //        case 1:
-        //            Freeze();
-        //            break;
-        //        case 2:
-        //            Sight();
-        //            break;
-
-        //    }
-        //}
-
-        if (Input.GetKeyUp(KeyCode.O))
-        {
-            Freeze();
-        }
-
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            Sight();
-        }
-    }
-
+  
     public void Freeze()
     {
         abilityInt = 1;
-   
+
         if (!abilityInUse && gameObject.activeInHierarchy && timeCounter < 0f)
         {
             audioManager.SetClipAbilityFreeze(audioManager.timeStop);
@@ -79,8 +50,9 @@ public class PlayerAbilities : MonoBehaviour
             {
                 audioManager.freezeAbility.Play();
             }
-            StartCoroutine(FreezeAbility());   
+            StartCoroutine(FreezeAbility());
         }
+        return;
 
     }
 
@@ -104,10 +76,11 @@ public class PlayerAbilities : MonoBehaviour
                     break;
             }
         }
-            
+        return;
+
     }
 
-    
+
 
     public IEnumerator FreezeAbility()
     {
@@ -156,7 +129,7 @@ public class PlayerAbilities : MonoBehaviour
 
         foreach (Platforms platform in gamePlatforms)
         {
-           
+
             platform.enabled = false;
         }
 
@@ -226,7 +199,7 @@ public class PlayerAbilities : MonoBehaviour
 
                 if (enemy.gameObject.GetComponent<Rigidbody2D>() != null)
                 {
-                  
+
                     enemy.gameObject.GetComponent<Rigidbody2D>().Sleep();
                 }
             }
@@ -290,7 +263,7 @@ public class PlayerAbilities : MonoBehaviour
 
     private void EndSight()
     {
-        if(abilityInt == 2)
+        if (abilityInt == 2)
         {
             audioManager.transition.Play();
             audioManager.sightAbility.Stop();
@@ -467,7 +440,7 @@ public class PlayerAbilities : MonoBehaviour
         }
     }
 
-  
+
     public void ResetAbility()
     {
         abilityInt = 0;
@@ -480,4 +453,6 @@ public class PlayerAbilities : MonoBehaviour
         EndSight();
         EndFreeze();
     }
+
+ 
 }

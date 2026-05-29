@@ -19,8 +19,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Animator gameViewAnim;
     private Queue<string> lineList;
 
-    public bool dialogueStarted;    
+    public bool dialogueStarted;
+    private string currentLine;
 
+
+    
     void Awake()
     {
         lineList = new Queue<string>();
@@ -33,27 +36,43 @@ public class DialogueManager : MonoBehaviour
         portraitAnim.SetTrigger("Grow");
         gameViewAnim.SetTrigger("Shrink");
         portraitPos.sprite = character.characterSprite;
-        foreach (string line in character.lines) 
+
+        foreach (string line in character.lines)
         {
             lineList.Enqueue(line);
         }
+
         StartCoroutine(Flash());
+        currentLine = lineList.Dequeue();
+        StartCoroutine(TypeLine(currentLine));
         DisplayNextLine();
-        
+
     }
 
     public void DisplayNextLine()
     {
-        if (lineList.Count == 0)
+        if (dialogueText.text == currentLine)
         {
-            EndDialogue();
-            return;
+            if (lineList.Count == 0)
+            {
+                EndDialogue();
+                return;
+            }
+
+            currentLine = lineList.Dequeue();
+
+
+            StopAllCoroutines();
+            StartCoroutine(Flash());
+            StartCoroutine(TypeLine(currentLine));
         }
 
-        string line = lineList.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(Flash());
-        StartCoroutine(TypeLine(line));
+        else
+        {
+            StopAllCoroutines();
+            completeLine(currentLine);
+        }
+        
     }
 
     IEnumerator TypeLine(string line)
@@ -64,16 +83,26 @@ public class DialogueManager : MonoBehaviour
         {
             yield return new WaitForSeconds(textSpeed);
             dialogueText.text += letter;
-           
+            yield return null;
+        }
+
+    }
+    private void completeLine(string line)
+    {
+        dialogueText.text = "";
+        dialogueText.text = line;
+
+        if (lineList.Count == 0)
+        {
+            EndDialogue();
+            return;
         }
     }
-    
+
     private void EndDialogue()
     {
         dialogueText.text = "";
         dialogueStarted = false;
-        portraitAnim.SetTrigger("Shrink");
-        gameViewAnim.SetTrigger("Grow");
     }
 
     IEnumerator Flash()

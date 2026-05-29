@@ -17,7 +17,6 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-            Debug.Log("Dialogue triggered");
             FindAnyObjectByType<DialogueManager>().BeginDialogue(characterList[characterCount]);
     }
 
