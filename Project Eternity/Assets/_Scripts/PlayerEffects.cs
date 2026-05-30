@@ -17,7 +17,8 @@ public class PlayerEffects : MonoBehaviour
     [SerializeField] private float bounceForce;
 
     [Header("Health Parameters")]
-    [SerializeField] private PlayerHealth soulHealth;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private float soulDamage;
     [SerializeField] private float generalDamage;
     [SerializeField] private float gradualDamage;
     [SerializeField] private float gradualDecreaseTime;
@@ -74,7 +75,7 @@ public class PlayerEffects : MonoBehaviour
 
         if (timeCounter < 0)
         {
-            soulHealth.TakeDamage(gradualDamage);
+            playerHealth.TakeDamage(gradualDamage);
             timeCounter = gradualDecreaseTime;
         }
 
@@ -107,9 +108,12 @@ public class PlayerEffects : MonoBehaviour
             {
                 if (followObject.gameObject.name == "Soul")
                 {
-                    soulHealth.TakeDamage(generalDamage);
+                    playerHealth.TakeDamage(soulDamage);
                 }
             }
+
+            playerHealth.TakeDamage(generalDamage);
+
             
         }
 
@@ -148,7 +152,7 @@ public class PlayerEffects : MonoBehaviour
             {
                 if (followObject.gameObject.name == "Soul")
                 {
-                    soulHealth.TakeDamage(generalDamage);
+                    playerHealth.TakeDamage(soulDamage);
                 }
             }
             Destroy(collision.gameObject, 0.1f);
@@ -172,7 +176,7 @@ public class PlayerEffects : MonoBehaviour
             {
                 if (followObject.gameObject.name == "Soul")
                 {
-                    soulHealth.TakeDamage(generalDamage);
+                    playerHealth.TakeDamage(soulDamage);
                 }
             }
 
@@ -229,7 +233,7 @@ public class PlayerEffects : MonoBehaviour
         }
     }
 
-    private void Disable()
+    public void Disable()
     {
         transform.position = currentCheckPoint.position;
         gameObject.SetActive(false);

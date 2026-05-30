@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        
         if (!playerObject.activeInHierarchy)
         {
             StartCoroutine(EnableTime());  
@@ -140,11 +141,11 @@ public class GameManager : MonoBehaviour
 
  
 
-        if ((Input.GetKeyUp(KeyCode.Escape)))
+        if ((Input.GetKeyUp(KeyCode.Escape)) && playerObject.activeInHierarchy)
         {
             switch(pauseCounter)
             {   case 0:
-                    pauseCounter++;
+                    pauseCounter += 2;
                     Cursor.lockState = CursorLockMode.None;
                     pauseMenu.SetActive(true);
                     selectionWindowBig.SetActive(false);
@@ -174,7 +175,6 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 0f;
                     break;
                 case 1:
-                    pauseCounter++;
                     break;
                 case 2:
                     pauseMenu.SetActive(false);
@@ -211,7 +211,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator EnableTime()
     {
-      
+        pauseCounter = 0;
         yield return new WaitForSeconds(controllerDisableTime);
         ability.DisableAbilities();
         playerObject.SetActive(true);

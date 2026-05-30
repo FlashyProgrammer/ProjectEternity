@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class UiManager : MonoBehaviour
 {
 
- 
     public void RestartButtonCheckPoint()
     {
         if (SceneManager.GetSceneByName("Death Screen").isLoaded)

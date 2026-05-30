@@ -66,15 +66,21 @@ public class PlayerController : MonoBehaviour
             PlayerDash();
             flipSprite();
         }
-       
 
-        animator.SetFloat("yVelocity", rb.linearVelocity.y);
-        animator.SetFloat("magnitude", rb.linearVelocity.magnitude);
-        animator.SetBool("isGrounded", isGrounded);
+        else
+        {
+            audioManager.audioSource.gameObject.SetActive(false);
+        }
+      
     }
 
     private void FixedUpdate()
     {
+
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetFloat("magnitude", rb.linearVelocity.magnitude);
+        animator.SetBool("isGrounded", isGrounded);
+
         Calculations();
         jumpBufferTimer -= Time.fixedDeltaTime;
 
@@ -92,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
             if (audioManager.audioSource.gameObject.activeInHierarchy)
             {
-                audioManager.audioSource.pitch = Random.Range(0.5f, 1f);
+                audioManager.audioSource.pitch = Random.Range(0.3f, 1.2f);
             }
         }
 
@@ -128,7 +134,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpBufferTimer = jumpBufferTime;
             rb.gravityScale = originalGravity;
-            Debug.Log("Jump Pressed");
         }
 
 
