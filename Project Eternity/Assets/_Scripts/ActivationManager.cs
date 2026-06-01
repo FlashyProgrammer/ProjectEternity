@@ -11,7 +11,7 @@ public class ActivationManager : MonoBehaviour
     [SerializeField] private bool isTwoPart;
     [SerializeField] private int maxKeys;
 
-    public int numberOfKeys;
+    private int numberOfKeys;
     private bool isCompleted;
     private Transform placedKey;
     private Transform currentKey;
@@ -69,7 +69,6 @@ public class ActivationManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.CompareTag("Player") && !isTwoPart)
         {
             currentKey = other.GetComponent<PlayerEffects>().followObject;
