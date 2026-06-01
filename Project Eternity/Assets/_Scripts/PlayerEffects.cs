@@ -39,6 +39,7 @@ public class PlayerEffects : MonoBehaviour
 
 
     private bool startCounter = true;
+    private bool isInitialized = false;
     private float timeCounter;
     private PlayerController controller;
     private float originalDamping;
@@ -54,6 +55,7 @@ public class PlayerEffects : MonoBehaviour
     private void Start()
     {
         isDropped = true;
+        timeCounter = gradualDecreaseTime;
         originalDamping = rb.linearDamping;
         originalAngularDaming = rb.angularDamping;
         originalMass = rb.mass;
@@ -62,19 +64,19 @@ public class PlayerEffects : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
 
+        Debug.Log(timeCounter);
         if (!isDropped && followObject != null)
         {
             followObject.transform.position = Vector2.MoveTowards(followObject.gameObject.transform.position, 
                 soulArea.position, followSpeed * Time.fixedDeltaTime);
         }
-        if (startCounter)
+        if (startCounter && isInitialized)
         {
             timeCounter -= Time.fixedDeltaTime;
         }
 
-        if (timeCounter < 0)
+        if (timeCounter < 0f)
         {
             playerHealth.TakeDamage(gradualDamage);
             timeCounter = gradualDecreaseTime;
@@ -85,17 +87,15 @@ public class PlayerEffects : MonoBehaviour
             startCounter = true;
         }
 
+        else if (followObject.gameObject.name == "Soul")
+        {
+            startCounter = false;
+        }
+
         else
         {
-            if (followObject.gameObject.name == "Soul")
-            {
-                startCounter = false;
-            }
-
-            else
-            {
-                startCounter = true;
-            }
+           startCounter = true;
+           
         }
     }
 
@@ -124,6 +124,7 @@ public class PlayerEffects : MonoBehaviour
           
             followObject = collision.transform;    
             followObject.parent = soulArea;
+            isInitialized = true;
 
             if (transform.localScale.x < 0f)
             {
@@ -185,6 +186,7 @@ public class PlayerEffects : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Key") && isDropped)
         {
+            isInitialized = true;
             followObject = collision.transform;
             followObject.parent = soulArea;
             followObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
