@@ -15,12 +15,17 @@ MonoBehaviour:
   charName: Eternity
   characterSprite: {fileID: 2816740430268824205, guid: db9b608722c4b6c41b021dd058fcbd3a, type: 3}
   lines:
-  - It's Time....
-  - You must guide the soul to the extraction point.
-  - 'I have given you access to some abilities, use them.
-
-    You may press the
-    Arrow Keys to acess them, E to confirm, and Ctrl to use.'
-  - 'Remember! You must minimize as much damage to the soul as possible. Failure
-    breeds consequences far beyond your understanding, for both you and the soul. '
-  - It is not an option.
+  - Hello, wanderer! Welcome to the morphed purgatory of Ophilia Jones, a lost soul
+    in need of closure.
+  - As my psychopomp, it is your responsibility to guide this soul to the extraction
+    point, where she may finally enjoy Eternity. giggles
+  - Before we begin, you'll need to know how to move about. Press A and D to traverse
+    the world, and SPACE to jump. Go on, give it a try!
+  - Fun, isn't it?
+  - 'You''ll also find that you can perform a double jump by pressing SPACE a second
+    time while in the air. If you hold SPACE while descending, you''ll float gently
+    downward for a short while. Very useful. '
+  - Sometimes the path isn't as straightforward as it first appears.
+  - Now then, the soul won't be difficult to find. Simply approach her. Lost souls
+    are naturally drawn to psychopomps...
+  - Go on. She's waiting for you.
