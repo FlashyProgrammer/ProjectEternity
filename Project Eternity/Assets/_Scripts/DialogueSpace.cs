@@ -6,15 +6,20 @@ public class DialogueSpace : MonoBehaviour
     [SerializeField] private DialogueTrigger dialogueToTrigger;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private GameObject markSprite;
-    [SerializeField] private Button talkButton;
+    [SerializeField] private Button talkButtonSmall;
+    [SerializeField] private Button talkButtonBig;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            talkButton.onClick.AddListener(dialogueToTrigger.EnableTrigger);
+            talkButtonSmall.onClick.AddListener(dialogueToTrigger.EnableTrigger);
+            talkButtonBig.onClick.AddListener(dialogueToTrigger.EnableTrigger);
+            dialogueToTrigger.EnableTrigger();
             markSprite.SetActive(true);
+            Debug.Log("New dialogue triggered");
         }
+
         
     }
 
@@ -23,6 +28,16 @@ public class DialogueSpace : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             markSprite.SetActive(true);
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                dialogueManager.DisplayNextLine();
+            } 
+
+
         }
     }
 
@@ -33,6 +48,7 @@ public class DialogueSpace : MonoBehaviour
             markSprite.SetActive(false);
 
         }
-        talkButton.onClick.RemoveListener(dialogueToTrigger.EnableTrigger);
+        talkButtonSmall.onClick.RemoveListener(dialogueToTrigger.EnableTrigger);
+        talkButtonBig.onClick.RemoveListener(dialogueToTrigger.EnableTrigger);
     }
 }

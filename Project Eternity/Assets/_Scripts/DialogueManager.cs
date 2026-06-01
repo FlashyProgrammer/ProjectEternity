@@ -29,6 +29,14 @@ public class DialogueManager : MonoBehaviour
         lineList = new Queue<string>();
     }
 
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            DisplayNextLine();
+        }
+    }
     public void BeginDialogue(Character character)
     {
         dialogueStarted = true;
