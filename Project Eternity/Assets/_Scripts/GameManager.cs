@@ -34,13 +34,15 @@ public class GameManager : MonoBehaviour
     [Header("Dialogue")]
     [SerializeField] private DialogueManager dialogueManager;
 
-
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager;
     private int pauseCounter;
     private PlayerController controller;
 
     private void Awake()
     {
         controller = playerObject.gameObject.GetComponent<PlayerController>();
+        audioManager.PlayGameMusic();
     }
     private void Update()
     {
@@ -139,7 +141,12 @@ public class GameManager : MonoBehaviour
             playerObject.transform.position = playerObject.GetComponent<PlayerEffects>().currentCheckPoint.position;
         }
 
- 
+        if (SceneManager.GetSceneByName("Play Screen").isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("Play Screen");
+        }
+
+
 
         if ((Input.GetKeyUp(KeyCode.Escape)) && playerObject.activeInHierarchy)
         {

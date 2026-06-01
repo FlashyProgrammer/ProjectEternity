@@ -829,8 +829,8 @@ MonoBehaviour:
   sightSound: {fileID: 0}
   transitionSound: {fileID: 0}
   walkSound: {fileID: 0}
-  audioManager: {fileID: 0}
-  musicSlider: {fileID: 0}
+  audioManager: {fileID: 522018431}
+  musicSlider: {fileID: 4247883}
 --- !u!1 &593617821
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,27 +27,20 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        audioManager.musicSource.volume = musicSlider.value;
+        if (musicSlider != null)
+        {
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+            audioManager.musicSource.volume = musicSlider.value;
 
-        musicSlider.onValueChanged.AddListener(SetVolume);
+            musicSlider.onValueChanged.AddListener(SetVolume);
+        }
+     
     }
 
     void SetVolume(float value)
     {
         audioManager.musicSource.volume = value;
         PlayerPrefs.SetFloat("MusicVolume", value);
-    }
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-
-        AudioManager[] managers = FindObjectsOfType<AudioManager>();
-        if (managers.Length > 1)
-        {
-            Destroy(gameObject);
-            return;
-        }
     }
     public void SetClip(AudioClip sound)
     {

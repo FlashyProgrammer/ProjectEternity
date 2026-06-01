@@ -65,7 +65,6 @@ public class PlayerEffects : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Debug.Log(timeCounter);
         if (!isDropped && followObject != null)
         {
             followObject.transform.position = Vector2.MoveTowards(followObject.gameObject.transform.position, 
@@ -244,9 +243,13 @@ public class PlayerEffects : MonoBehaviour
 
     public void Disable()
     {
-        transform.position = currentCheckPoint.position;
-        gameObject.SetActive(false);
-        controller.enabled = false;
+        if (currentCheckPoint != null) 
+        {
+            transform.position = currentCheckPoint.position;
+            gameObject.SetActive(false);
+            controller.enabled = false;
+        }
+ 
 
     }
  
