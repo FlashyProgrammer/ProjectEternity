@@ -54,6 +54,7 @@ public class ActivationManager : MonoBehaviour
                 if (activateEnemy != null && isCompleted)
                 {
                     activateEnemy.enabled = true;
+                    playerConditions.GetComponent<PlayerEffects>().DropSoul();
                 }
 
                 if (activatePlatform != null && isCompleted)

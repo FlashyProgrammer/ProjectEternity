@@ -64,8 +64,6 @@ public class PlayerEffects : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        Debug.Log(timeCounter);
         if (!isDropped && followObject != null)
         {
             followObject.transform.position = Vector2.MoveTowards(followObject.gameObject.transform.position, 
@@ -115,7 +113,7 @@ public class PlayerEffects : MonoBehaviour
 
             playerHealth.TakeDamage(physicalDamage);
 
-            
+         
         }
 
         // Soul Collisions
