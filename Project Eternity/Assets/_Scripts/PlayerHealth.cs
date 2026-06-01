@@ -75,36 +75,26 @@ public class PlayerHealth : MonoBehaviour
         if (healthPercent > overlayStartThreshold)
             return 0f;
 
-        // start VERY soft at first
+
         if (healthPercent > 0.25f)
             return 0.05f;
 
-        // danger zone
+        
         return maxOverlayAlpha;
     }
 
     void UpdateOverlay()
     {
-        float target = GetTargetOverlayAlpha();
-
-        currentOverlayAlpha = Mathf.Lerp(
-            currentOverlayAlpha,
-            target,
-            Time.deltaTime * 3f
-        );
-
-        float pulse = 0f;
-
-        // ONLY pulse under 40% HP
+        float finalAlpha = 0f;
         if (healthPercent <= overlayStartThreshold)
         {
             float speed = Mathf.Lerp(2f, 8f, 1f - healthPercent);
-            pulse = Mathf.Sin(Time.time * speed) * 0.03f;
+
+            
+            finalAlpha = (Mathf.Sin(Time.time * speed) + 1f) * 0.5f * (30f / 255f);
         }
 
-        float finalAlpha = Mathf.Clamp01(currentOverlayAlpha + pulse);
-
-        damageOverlay.color = new Color(0.6f, 0f, 0f, finalAlpha);
+        damageOverlay.color = new Color(0.2f, 0f, 0f, finalAlpha);
     }
 
     private void Awake()
@@ -129,7 +119,7 @@ public class PlayerHealth : MonoBehaviour
     {
         float targetIntensity = 0f;
 
-        // start vignette at 40% HP
+       
         if (healthPercent <= 0.4f)
         {
             targetIntensity = (1f - healthPercent) * 0.5f;
