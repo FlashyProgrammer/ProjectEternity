@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e787bb2f794a6a4695134e4583867ae, type: 3}
+  m_Name: Ophilia Jones Portrait encounter
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  charName: Eternity
+  characterSprite: {fileID: 8013740796401983728, guid: bc45d0c45810e4f4c8ec60be231b7e55, type: 3}
+  lines:
+  - "This portrait\u2026 it\u2019s my father."
+  - "He was a very strict man. The kind who believed emotions were something to be
+    corrected, not spoken about. He never really heard my cries\u2026 only what he
+    expected them to become."
+  - He always gave me a cold shoulder, as if warmth might distract me from becoming
+    what he wanted.
+  - "But my last memory of him\u2026 it was different."
+  - "I remember him sitting alone in his study, the same room I always saw him in\u2026
+    but he wasn\u2019t the same. He looked tired. Not in body, but in something deeper.
+    Like something in him had finally cracked."
+  - "I think\u2026 he was sad that I was sad."
+  - "And I didn\u2019t know what to do with that."
+  - I remember wanting to say something to him. Something simple. Something that
+    would fix it. But the words never came out properly.
+  - "Oh\u2026 Father."
+  - I miss you dearly.
+  - "I wonder if you\u2019re here somewhere too."

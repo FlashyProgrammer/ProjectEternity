@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e787bb2f794a6a4695134e4583867ae, type: 3}
+  m_Name: Ophilia Jones Departure
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  charName: Eternity
+  characterSprite: {fileID: 8013740796401983728, guid: bc45d0c45810e4f4c8ec60be231b7e55, type: 3}
+  lines:
+  - We're almost there, aren't we?
+  - It's strange...
+  - The closer we get to the end, the harder it is to remember some things.
+  - Faces blur. Voices fade.
+  - But there is one thing I can't forget.
+  - I remember waiting.
+  - 'I remember watching the clock and listening for footsteps that never came.
+
+    At
+    first, I was worried. Then embarrassed. Then angry.
+
+    And after that...
+
+'
+  - I don't remember much at all.
+  - For so long I thought this place was built from all my memories, but now I think
+    it's built from the ones I couldn't let go of.
+  - The vines.
+  - The rooms.
+  - The endless feeling that something is missing.
+  - Maybe that's why they're here.
+  - 'Maybe they''re not trying to keep me trapped.
+
+    Maybe they''re trying to
+    keep something from being forgotten.
+
+'
+  - ...
+  - 'Do you ever miss someone so much that it begins to hurt?
+
+    Not just in your
+    heart.
+
+'
+  - Everywhere.
+  - I think I understand now.
+  - Thank you for staying with me.
+  - Let's finish this together.

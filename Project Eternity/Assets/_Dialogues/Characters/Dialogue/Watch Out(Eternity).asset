@@ -15,6 +15,27 @@ MonoBehaviour:
   charName: Eternity
   characterSprite: {fileID: 2816740430268824205, guid: db9b608722c4b6c41b021dd058fcbd3a, type: 3}
   lines:
+  - ...Oh?
   - What is that?
-  - Looks like this soul's pain is manifesting itself all around.
+  - It appears this soul's pain is manifesting throughout her purgatory. Those hazardous
+    vines are not naturally occurring, you know. They grow from suffering, regret,
+    and all those other unpleasant little things.
   - Proceed with caution.
+  - You look puzzled.
+  - Did nobody explain your abilities to you?
+  - sigh
+  - Honestly, they really will appoint anyone these days.
+  - 'You possess three abilities. Look to the box in the bottom right corner of your
+    screen.
+
+    Use the Arrow Keys to navigate between the options and press Enter
+    to make a selection.
+
+'
+  - For these vines, you'll want to choose Third Eye. It allows you to enter a purer
+    state of Purgatory, a place where manifestations such as these cannot take root.
+  - Go on. Give it a try.
+  - Once you've selected an ability, bind it to either O or P. Afterwards, simply
+    press the assigned key whenever you wish to use it. The binding will remain until
+    you choose to change it.
+  - Simple enough, isn't it?
