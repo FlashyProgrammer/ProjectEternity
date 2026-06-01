@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Watch Out(Eternity)
   m_EditorClassIdentifier: Assembly-CSharp::Character
   charName: Eternity
-  characterSprite: {fileID: 5220669003854583097, guid: 9b124418c9aaeda4aa715866eb72a774, type: 3}
+  characterSprite: {fileID: 2816740430268824205, guid: db9b608722c4b6c41b021dd058fcbd3a, type: 3}
   lines:
   - What is that?
   - Looks like this soul's pain is manifesting itself all around.

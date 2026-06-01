@@ -17,7 +17,6 @@ public class DialogueSpace : MonoBehaviour
             talkButtonBig.onClick.AddListener(dialogueToTrigger.EnableTrigger);
             dialogueToTrigger.EnableTrigger();
             markSprite.SetActive(true);
-            Debug.Log("New dialogue triggered");
         }
 
         
