@@ -11,9 +11,9 @@ public class ActivationManager : MonoBehaviour
     [SerializeField] private bool isTwoPart;
     [SerializeField] private int maxKeys;
 
-    private int numberOfKeys;
+    [SerializeField] private PlayerEffects playerConditions;
+    [HideInInspector] public int numberOfKeys;
     private bool isCompleted;
-    private Transform placedKey;
     private Transform currentKey;
 
     private void Awake()
@@ -37,18 +37,18 @@ public class ActivationManager : MonoBehaviour
     }
     private void Update()
     {
-        if (placedKey != null)
-        {
-            if (placedKey == requiredKey)
-            {
-                placedKey.parent = null;
-                placedKey.transform.position = Vector2.MoveTowards(placedKey.transform.position, transform.position, keyAttachSpeed);
 
-                if (Vector2.Distance(placedKey.position, transform.position) < 0.01f)
+        if (currentKey != null)
+        {
+            if (currentKey == requiredKey)
+            {
+                currentKey.parent = null;
+                currentKey.transform.position = Vector2.MoveTowards(currentKey.transform.position, transform.position, keyAttachSpeed);
+
+                if (Vector2.Distance(currentKey.position, transform.position) < 0.01f)
                 {
-                    placedKey.gameObject.SetActive(false);
+                    currentKey.gameObject.SetActive(false);
                     currentKey = null;
-                    placedKey = null;
                 }
 
                 if (activateEnemy != null && isCompleted)
@@ -59,6 +59,11 @@ public class ActivationManager : MonoBehaviour
                 if (activatePlatform != null && isCompleted)
                 {
                     activatePlatform.enabled = true;
+                    if (playerConditions != null)
+                    {
+                        playerConditions.GetComponent<PlayerEffects>().DropSoul();
+
+                    }
                     activatePlatform.isToBeActivated = false;
 
                 }
@@ -69,6 +74,7 @@ public class ActivationManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        playerConditions = other.GetComponent<PlayerEffects>();
         if (other.CompareTag("Player") && !isTwoPart)
         {
             currentKey = other.GetComponent<PlayerEffects>().followObject;
@@ -77,7 +83,8 @@ public class ActivationManager : MonoBehaviour
             {
                 if (currentKey == requiredKey)
                 {
-                    placedKey = requiredKey;
+                    playerConditions.DropSoul();
+                    playerConditions.DropSoul();
                     isCompleted = true;
 
                 }
@@ -87,17 +94,19 @@ public class ActivationManager : MonoBehaviour
 
         if (other.CompareTag("Player") && isTwoPart)
         {
+
             currentKey = other.GetComponent<PlayerEffects>().followObject;
 
             if (currentKey != null)
             {
                 if (currentKey == requiredKey)
                 {
-                    placedKey = requiredKey;
+                    playerConditions.DropSoul();
                     numberOfKeys++;
-                
+
                     if (numberOfKeys + nextActivation.numberOfKeys == maxKeys)
                     {
+                        playerConditions.DropSoul();
                         isCompleted = true;
                     }
 
@@ -105,21 +114,21 @@ public class ActivationManager : MonoBehaviour
             }
         }
 
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
+
+
+    }
+    private void OnTriggerStay2D(Collider2D other)
     {
+        playerConditions = other.GetComponent<PlayerEffects>();
         if (other.CompareTag("Player") && !isTwoPart)
         {
-            currentKey = other.GetComponent<PlayerEffects>().followObject;
 
-            if (currentKey != null)
+            if (currentKey == requiredKey)
             {
-                if (currentKey == requiredKey)
-                {
-                    other.GetComponent<PlayerEffects>().DropSoul();
+                playerConditions.DropSoul();
+                isCompleted = true;
 
-                }
             }
 
         }
@@ -132,11 +141,10 @@ public class ActivationManager : MonoBehaviour
             {
                 if (currentKey == requiredKey)
                 {
-                    other.GetComponent<PlayerEffects>().DropSoul();
-
                     if (numberOfKeys + nextActivation.numberOfKeys == maxKeys)
                     {
-                        other.GetComponent<PlayerEffects>().DropSoul();
+                        playerConditions.DropSoul();
+                        isCompleted = true;
                     }
 
                 }
