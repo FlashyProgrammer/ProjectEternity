@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private UiManager uiManager;
     [SerializeField] private Slider healthSlider;
-    [SerializeField] private float decreaseTime;
     public float maxHealth;
     public float soulHealth;
     float healthPercent => soulHealth / maxHealth;
@@ -120,6 +119,11 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = soulHealth;
 
 
+    }
+
+    public void GainHealth(float amount)
+    {
+        soulHealth += amount;
     }
     void UpdateVignette()
     {

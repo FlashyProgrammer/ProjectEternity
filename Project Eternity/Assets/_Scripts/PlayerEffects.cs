@@ -18,8 +18,9 @@ public class PlayerEffects : MonoBehaviour
 
     [Header("Health Parameters")]
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private float healthPackAmount;
     [SerializeField] private float soulDamage;
-    [SerializeField] private float generalDamage;
+    [SerializeField] private float physicalDamage;
     [SerializeField] private float gradualDamage;
     [SerializeField] private float gradualDecreaseTime;
 
@@ -112,7 +113,7 @@ public class PlayerEffects : MonoBehaviour
                 }
             }
 
-            playerHealth.TakeDamage(generalDamage);
+            playerHealth.TakeDamage(physicalDamage);
 
             
         }
@@ -197,6 +198,12 @@ public class PlayerEffects : MonoBehaviour
             {
                 uiManager.WinScreen();
             }
+        }
+
+        if (collision.gameObject.CompareTag("Health") && playerHealth.soulHealth < playerHealth.maxHealth)
+        {
+            playerHealth.GainHealth(healthPackAmount);
+            Destroy(collision.gameObject);
         }
     }
 

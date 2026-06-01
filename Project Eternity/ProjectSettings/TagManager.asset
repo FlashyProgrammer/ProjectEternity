@@ -16,6 +16,7 @@ TagManager:
   - Bounce
   - Projectile
   - Extraction
+  - Health
   layers:
   - Default
   - TransparentFX
