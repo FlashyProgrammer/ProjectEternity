@@ -27362,15 +27362,7 @@ MonoBehaviour:
     rid: 7036197294611365963
   m_ShadowCastingSource: 2
   m_ShadowMesh:
-<<<<<<< Updated upstream
     m_Mesh: {fileID: 751881810}
-=======
-<<<<<<< HEAD
-    m_Mesh: {fileID: 1992544374}
-=======
-    m_Mesh: {fileID: 751881810}
->>>>>>> Tutorial
->>>>>>> Stashed changes
     m_LocalBounds:
       m_Center: {x: 0, y: 0.24333191, z: 0}
       m_Extent: {x: 0.15875244, y: 0.29415894, z: 0}
@@ -41336,11 +41328,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201068957}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 --- !u!1 &1220664643
 GameObject:
   m_ObjectHideFlags: 0
@@ -41438,10 +41425,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.7546997, y: 2.7726755}
   m_EdgeRadius: 0
-<<<<<<< Updated upstream
-=======
->>>>>>> Tutorial
->>>>>>> Stashed changes
 --- !u!1 &1222624785
 GameObject:
   m_ObjectHideFlags: 0
