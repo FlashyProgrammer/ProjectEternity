@@ -11,7 +11,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI flashingText;
     [SerializeField] private float flashTime;
     [SerializeField] private float textSpeed;
-    [SerializeField] private float textTime;
     [SerializeField] private Image portraitPos;
 
     [Header("Animations")]
